@@ -1,0 +1,131 @@
+*{
+    border: solid 1px  red;
+}
+
+body{
+  
+    margin:auto;
+    width: 1190px;
+}
+
+header{
+    width: 590px;
+    display: inline-block;
+
+}
+nav li{
+    display: inline-block;
+}
+
+#primero{
+    width: 590px;
+    float: right;
+    
+}
+#secundario{
+    width: 690px;
+    float: left; 
+    height: 100px;
+}
+
+#sub{
+    width: 100%;
+    
+}
+
+
+#idioma{
+    width: 490px;
+    float:right;
+   text-align: right;
+   height: 100px;
+    
+   
+}
+
+#program {
+    width: 890px;
+    display: inline-block;
+}
+
+#program>p{
+    width: 690px;
+    
+
+}
+#fp{
+    position: absolute;
+    left: 750px;
+    top:374.5px;
+   
+   
+}
+
+#about{
+    width: 490px;
+    display: inline-block;
+    margin-right:10px;
+}
+
+#schedule{
+    width: 390px;
+    display: inline-block;
+
+}
+
+#festival {
+    width: 890px;
+}
+
+section{
+    width: 890px;
+}
+
+#caja{
+    width: 290px;
+    display: inline-block;
+   
+}
+
+
+
+#registro{
+  
+    position: absolute;
+    left: 929px;
+    top:300px;
+    width: 290px;
+
+}
+
+#listaImagenes{
+    position: absolute;
+    left: 929px;
+    top:374.5px;
+    width: 290px;
+
+}
+
+
+
+#who{
+    position: absolute;
+    left: 929px;
+    top: 900px;
+    width: 290px;
+
+}
+
+#listaImagenes>img{
+  
+ 
+    display: inline-block;
+
+}
+
+#listaImagenes>p{
+     width: 290px;
+   text-align:left;
+  
+
+}

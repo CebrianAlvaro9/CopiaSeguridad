@@ -1,0 +1,55 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/estilos.css" type="text/css">
+    <script languaje="Javascript" src=scripts/controlador.js></script>
+    <title>maquetacion CSS</title>
+</head>
+<body>
+    <div id="cabecera">Cabecera</div>
+    <div id="cuerpo"> 
+        <div id= "contenido">
+        <div class="contenido sombreado redondeado">
+            <span class="tituloContenido" >Formulario Datos</span>
+            <div id ="cmpNombre" class="componenteText componente"> 
+                <span id="cmpNombreEtiqueta"class="componenteTextEtiqueta">Nombre</span>
+                <input type="text" id="cmpNombreTxt" class="componenteTextTexto">
+            </div>
+            <div id ="cmpApellido" class="componenteText componente"> 
+                <span id="cmpNombreEtiqueta"class="componenteTextEtiqueta">Apellido</span>
+                <input type="text" id="cmpNombreTxt" class="componenteTextTexto">
+            </div>
+
+            <!--
+                componenteLista
+                componenteListaEtiqueta
+            -->
+            
+            <div class="componenteLista componente">
+                <span class="componenteListaEtiqueta">Listado provincias</span>
+                <select class="componenteListaTexto" name="opciones" id="">
+                    <option value="">-</option>
+                    <option value="Zaragoza" selected>Zaragoza</option>
+                    <option value="Huesca">Huesca</option>
+                    <option value="Teruel">Teruel</option>
+                </select>
+            </div>
+
+
+        <div class="botonera">
+            <input type="button" id="btnOk" value="Ok" onclick="btnOk_onClick()">
+            <input type="button" id="btnCancel" value="Cancel" onclick="btnCancel_onClick()">
+            <button id="btnOk" value="Ok" onclick="btnOk_onClick()"><h1>Hola</h1><p>Guapeton</p> </button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+   
+    <div id="pie">Pie</div>
+   
+</body>
+</html>
