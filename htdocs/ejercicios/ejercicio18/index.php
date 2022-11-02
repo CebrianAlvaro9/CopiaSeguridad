@@ -1,6 +1,6 @@
 <?php
 
-require_once "app.php";
+require_once "App.php";
 $app = new App;
 
 if($_SERVER["REQUEST_METHOD"]==="POST"){

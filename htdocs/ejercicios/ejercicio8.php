@@ -8,13 +8,15 @@
 // $array1 = array();
 // $array1 = [];
 
+//array_push para añadir elementos a un array en concreto
+
 $array1[]="Lonnie Walker IV";
 array_push($array1,"Russell Westbrook" );
 array_push($array1,"Patrick Beverley" );
 array_push($array1,"Kendrick Nunn" );
 array_push($array1,"Dennis Schroder" );
 
-//la podemos recorrer con el bucle foreach de dos maneras:
+//simplemente recorro y proyecto
 
 foreach ($array1 as $element){
     echo $element . '<br>';

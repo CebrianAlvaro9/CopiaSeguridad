@@ -12,9 +12,11 @@
     <hr>
     <?php
     if (isset($_GET['nombres'])) {
+      
       foreach($_GET['nombres'] as $nombre) {
+        
         echo '<input type="hidden" name="nombres[]" value="' . $nombre . '">';
-         echo "<ul><li>".$nombre."</li></ul>";
+        echo "<ul><li>".$nombre."</li></ul>";
       }
       
     }
