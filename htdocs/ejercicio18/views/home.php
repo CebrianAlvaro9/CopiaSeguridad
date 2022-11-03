@@ -4,13 +4,11 @@
 
 ?>
 <!DOCTYPE html>
-
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Ejercicio19</title>
 </head>
 <body>
   <h1>Bienvenido <?= $_SESSION['name'] ?></h1>
@@ -20,9 +18,7 @@
   <h4><a href="?method=close">Cerrar sesión</a></h4>
   <ul>
     <pre>
-  <?php 
-  // var_dump($deseos);
-  // exit();
+  <?php
   $deseos=$_SESSION['deseos'];
   if (count($deseos)) {
     foreach ($deseos as $id => $deseo) {

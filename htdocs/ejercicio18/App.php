@@ -3,9 +3,9 @@
 class App
 {
 
-  public function __construct()
+  function __construct()
   {
-    session_start();    
+    session_start();   
   }
 
   public function run()
@@ -25,9 +25,6 @@ class App
     {
       header('Location: ?method=home');
       return;
-    }else{
-     
-      setcookie(session_name(),'',time()-7200,'/');
     }
     include('views/login.php');
   }
@@ -46,22 +43,15 @@ class App
     $_SESSION['deseos'] = [];
     header('Location: index.php?method=home');
   }
-   
- 
-
   public function home()
-  
   {
-    
-    
     if (!isset($_SESSION['name'])) {
       header('Location: ?method=login');
       return;
     }
-    if (isset($_SESSION['deseos'])) {
-      $deseos = ($_SESSION['deseos']);
+    if (isset($_SESION['deseos'])) {
+      $deseos = $_SESION['deseos'];
     } else {
-      // $deseos = array();
       $deseos = [];
     }
     include('views/home.php');
@@ -69,20 +59,18 @@ class App
 
   public function new()
   {
-   
-   
     if (!isset($_POST['new'])) {
       header('Location: index.php?method=home');
       return;
     }
     $new = $_POST['new'];
     if (isset($_SESSION['deseos'])) {
-      $deseos = ($_SESSION['deseos']);
+      $deseos = $_SESSION['deseos'];
     } else {
       $deseos = [];
     }
     $deseos[] = $new;
-    $_SESSION["deseos"] =($deseos);
+    $_SESSION['deseos'] = $deseos;
     header('Location: index.php?method=home');
   }
 
@@ -101,18 +89,13 @@ class App
 
   public function empty()
   {
-   
-   
     $_SESSION['deseos']=[];
-    // setcookie('deseos', '', time() - 1);
     header('Location: index.php?method=home');    
   }
 
   public function close()
   {
-   
     session_destroy();
-    setcookie(session_name(),'',time()-7200,'/');
     header('Location: index.php?method=login');
   }
 }
