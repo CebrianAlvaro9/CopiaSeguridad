@@ -2,6 +2,9 @@
 
 class App
 {
+
+  //metodo run carga la app y envia al metodo login
+
   public function run()
   {
     if (isset($_GET['method'])) {
@@ -9,10 +12,10 @@ class App
     } else {
       $method = 'login';
     }
-  
-    $this->$method();      
-  }
 
+    $this->$method();
+  }
+  // Si existe una cookie rederige directamente al home si no se va al login
   public function login()
   {
     if (isset($_COOKIE['name'])) {
@@ -22,8 +25,11 @@ class App
     include('views/login.php');
   }
 
+  //Metodo para comprobar si el campo nombre se envia y guarda los nombres y password en una variable
+  // las utiliza para crear las cookies con la variables name y password
   public function auth()
   {
+
     //recoger datos POST
     if (isset($_POST['name'])) {
       $name = $_POST['name'];
@@ -32,13 +38,14 @@ class App
       header('Location: ?method=login');
       return;
     }
-    //echo "xxxxx"; //al cuerpo del response. Ya no puedo usar header, ningun setcookie,....
+
     //guardar en cookie
-    setcookie('name', $name, time() + 60*60*2);
-    setcookie('password', $password, time() + 60*60*2);
+    setcookie('name', $name, time() + 60 * 60 * 2);
+    setcookie('password', $password, time() + 60 * 60 * 2);
     //reenviar a "home"
+
     //le dice al navegador que vaya a otro sitio:
-    //http://ejercicios.local/ejemplos/20/index.php?method=home
+
     header('Location: index.php?method=home');
   }
 
@@ -48,16 +55,16 @@ class App
       header('Location: ?method=login');
       return;
     }
-    
+//include es que al ejecutar este metodo incluya la view home.php
     include('views/home.php');
   }
 
+  //La funcion close basicamente borra las cookies creadas y reenvia al metodo login
   public function close()
   {
-   
+
     setcookie('name', '',  1);
     setcookie('password', '',  1);
     header('Location: index.php?method=login');
   }
-
 }

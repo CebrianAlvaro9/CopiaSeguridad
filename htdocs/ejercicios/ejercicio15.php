@@ -4,6 +4,9 @@
   <title>ejemplo</title>
 </head><body>
   <h2>Lista con formularios:</h2>
+
+  
+
   <form action="">
     <input type="text" name="nombres[]">
     <input type="text" name="nombres[]">

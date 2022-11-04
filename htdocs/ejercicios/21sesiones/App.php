@@ -2,6 +2,8 @@
 
 class App
 {
+
+   //inicio de la app recoge el metodo home y lo ejecuta
   public function __construct()
   {
     session_start();    
@@ -19,6 +21,8 @@ class App
     }
 
 
+
+  // Si existe la session rederige al metodo colores si no simplemente muestra la pestaña con los colores
      
     public function home()
     {
@@ -36,7 +40,7 @@ class App
   }
 
  
-
+  // recoge el id de la pestaña colores y crea una cookie con el
 
   public function cambio(){
 
@@ -47,7 +51,7 @@ class App
     header('Location: index.php?method=colores');
 
   }
-
+ //Si existe la cookie con el color correspondiente cambia el color del fondo del home
   
   public function colores(){
 

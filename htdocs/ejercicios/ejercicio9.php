@@ -13,11 +13,6 @@ array_push($array1,"Francia" );
 array_push($array1,"Rumania" );
 
 
-//accedemos a los elementos del array con corchetes y su posición.
-
-
-
-//la podemos recorrer con el bucle foreach de dos maneras:
 echo "<hr> Recorrido mediante bucle foreach simple <br>";
 echo"<ul>";
 foreach ($array1 as $element){

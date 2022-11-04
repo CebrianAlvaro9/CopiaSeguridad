@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<!-- El link ejecuta el metodo cambio y recoge la variable color -->
 
 <h4><a href="?method=cambio&color=red">ROJO</a></h4>
 <h4><a href="?method=cambio&color=blue">AZUL</a></h4>

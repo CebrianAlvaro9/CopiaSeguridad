@@ -7,9 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+
+    
     
     <h1>Pagina de chequeo libro:</h1>
     <?php 
+    // El isset lo que hace es comprobar que al enviar el formulario exista y se haya enviado ese campo
+    // !empty nos permite comprobar que no esta vacio ese get
+    
     if(isset($_GET['envio'])){
          if(isset($_GET['titulo'])&& !empty($_GET['titulo'])){
             $titulo = $_GET['titulo'];

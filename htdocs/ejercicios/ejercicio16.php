@@ -18,7 +18,7 @@
         echo '<input type="hidden" name="nombres[]" value="' . $nombre . '">';
         echo "<ul><li>".$nombre."</li></ul>";
       }
-      
+      // el input hidden nos permite que se vayan almacenando en ve de sustituyendo poco a poco
     }
     ?>
   </form>
