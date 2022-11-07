@@ -37,7 +37,7 @@ header{
 }
 nav li{
     display: inline-block;
-    background-color:rgb(186, 181, 181) ;
+    background-color:rgb(238, 232, 232) ;
 
 }
 
@@ -158,14 +158,15 @@ section{
 
 #program>h1{
 font-size: 30px;
-color:rgb(86, 163, 138);
-font-weight: bold;
+
+color:rgb(88, 211, 242);
+font-weight: bolder;
 }
 
 #fp{
    
     float: right;
-   
+   padding-right: 40px;
 }
 
 #about{
@@ -179,12 +180,13 @@ font-weight: bold;
     font-size: 15px;
 }
 #about>p{
-width: 300px;
+width: 350px;
 }
 #schedule{
     width: 390px;
     display: inline-block;
     padding-left: 10px;
+    padding-right: 30px;
 }
 
 #schedule>h1{
@@ -226,6 +228,7 @@ section{
     font-size: 16px;
     margin-left: 4px;
     margin-right: 4px;
+    font-weight: bold;
 }
 .caja>p{
     margin-left: 4px;
@@ -272,7 +275,7 @@ border-color: greenyellow;
    
     margin-top: 20px;
     width: 290px;
-    background-color: lightgray;
+    background-color:rgb(238, 232, 232) ;
    font-family: sans-serif;
     height: 380px;
     border-radius:  5px;
@@ -345,6 +348,7 @@ border-color: greenyellow;
     width: 120px;
     float:left;
     text-align: left;
+    color: white;
   
 }
 
@@ -362,4 +366,85 @@ aside{
     width: 290px;
     float: right;
     
+}
+
+
+footer{
+    height: 150px;
+    background-color: gray;
+    width: 1190px;
+    float: left;
+    color: black;
+
+}
+
+.azul{
+    color: #2596be;
+}
+
+
+#blanco{
+    color: white;
+}
+
+.final{
+    padding-top:20px;
+    text-decoration: none;
+    display: inline-block;
+ 
+   list-style: none;
+   margin: 0;
+   height: 95px;
+   vertical-align: top;
+}
+
+.final a
+{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+#Drum{
+    width: 200px;
+    padding-left: 70px;
+    
+    
+}
+
+#redes2{
+    width: 230px;
+}
+
+footer p{
+width: 300px;
+
+margin-left: 70px;
+text-align: right;
+font-size: 14px;
+}
+
+
+
+#ultimo{
+    margin-top: 50px;
+    padding-left: 18px;
+    width: 1190px;
+    float: left;
+    padding-right: 30px;
+
+}
+
+#ultimo h1{
+    font-weight: bold;
+    font-size: 35px;
+}
+
+#ultimo p{
+    width: 600px;
+}
+
+.azulO{
+    color: rgb(25, 25, 104);
 }
