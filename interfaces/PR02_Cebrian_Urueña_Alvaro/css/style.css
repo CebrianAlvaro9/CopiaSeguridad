@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 
+/* fuentes */
 
 .font1{
     font-family: 'PT Sans', sans-serif;
@@ -19,41 +20,40 @@
 
 }
 
+#who>p,#who>b,.cajas>h1{
+    color: rgb(25, 25, 104);
+}
+
+#ultimoh1,#program>h1{
+    color:#39b7b1;
+    
+}
+
+a,#about>h1,#schedule>h1,#festival>h1{
+    
+    color: #04756f;
+    text-decoration: none;
+}
+/* body*/
 
 body{
-  
-    
     margin:auto;
     width: 1190px;
     box-sizing: border-box;
 }
 
+/*header imagen logo*/
 header{
     width: 590px;
     display: inline-block;
 
 }
+
+/*caracteristicas que comparten las listas de nav*/
 nav li{
     display: inline-block;
     background-color:rgb(238, 232, 232) ;
 
-}
-
-#primero{
-    width: 590px;
-    float: right;
-    text-align: right;
-    font-size: 26px;
-    font-family: 'Microsoft sans serif';
-    
-   
-    
-}
-#primero li{
-  
-    padding: 5px;
-    border-radius: 10px 10px 10px;
-   
 }
 
 nav a{
@@ -61,19 +61,21 @@ nav a{
     text-decoration: none;
     color: grey;
     border: 100px;
-   
-   
+
 }
 
-
-
-#secundario{
-    width: 690px;
-    float: left; 
-    height: 50px;
-    font-size: 17px;
-    font-family: sans-serif;
-    border-bottom:solid 1px black;
+/* primera lista de navegacion*/
+#primero{
+    width: 590px;
+    float: right;
+    text-align: right;
+    font-size: 26px;
+      
+}
+#primero li{
+  
+    padding: 5px;
+    border-radius: 10px 10px 10px;
    
 }
 
@@ -83,6 +85,19 @@ nav a{
     border-bottom:solid 1px black;
     height: 50px;
 }
+
+/* segunda lista de navegacion*/
+
+#secundario{
+    width: 690px;
+    float: left; 
+    height: 50px;
+    font-size: 17px;
+    border-bottom:solid 1px black;
+   
+}
+
+
 
 #secundario li{
     padding: 5px;
@@ -94,7 +109,7 @@ nav a{
     
 }
 
-
+/*subtitulo*/
 #sub{
     width: 100%;
     font-size: 42px;
@@ -102,6 +117,7 @@ nav a{
     
 }
 
+/*caja idioma*/
 
 #idioma{
     width: 490px;
@@ -118,6 +134,8 @@ nav a{
     margin:0;
 }
 
+
+
 #uno1{
     border:gray solid;
     border-radius: 10px 0px 0px 10px ;
@@ -132,24 +150,35 @@ nav a{
     border-radius: 0px 10px 10px 0px ;
 }
 
-#program {
-    width: 890px;
-    display: inline-block;
-    padding-left: 18px;
-   
+
+/*caracteristicas  de article,section, aside*/
+
+article,section{
+    float:left;
     
 }
 
-article{
-    float:left;
-}
+
 section{
-    float:left;
+    width: 890px;
 }
+
+aside{
+    width: 290px;
+    float: right;
+    
+}
+
+/* program*/
+
+#program {
+    width: 890px;
+    padding-left: 18px; 
+}
+
 
 #program>p{
     width: 620px;
-    font-family:'Times New Roman', Times, serif;
     display: inline-block;
 
 }
@@ -157,19 +186,17 @@ section{
 #program>h1{
 font-size: 30px;
 
-color:#39b7b1;
 font-weight: bolder;
 }
+/*imagen que va dentro del program*/
 
 #fp{
-   
-    float: right;
+   float: right;
    padding-right: 40px;
 }
-
+/*about*/
 #about{
     width: 490px;
-    display: inline-block;
     margin-right:10px;
     padding-left: 18px;
     
@@ -182,9 +209,10 @@ font-weight: bolder;
 width: 350px;
 color:#ababab;
 }
+
+/*schedule*/
 #schedule{
     width: 390px;
-    display: inline-block;
     padding-left: 10px;
     padding-right: 30px;
 }
@@ -199,6 +227,8 @@ color:#ababab;
     color:#ababab;
     }
 
+    /*festival*/
+
 #festival {
     width: 890px;
 padding-left: 18px;
@@ -209,23 +239,18 @@ padding-left: 18px;
     margin-right: 300px;
 }
 
-
-
-section{
-    width: 890px;
-}
+/*parte de las cajas*/
 
 .caja{
     width: 290px;
     height: 200px;
     display: inline-block;
     margin-right: 10px;
-   margin-top: 20px;
-  
-    
-   margin-bottom: 10px;  
+    margin-top: 20px;
+    margin-bottom: 10px;  
 }
 
+/*clases de las cajas*/
 .uno{
     transform: rotate(1deg);
     background-color:#ffdbd5;
@@ -247,44 +272,43 @@ section{
 .cuatro{
     transform: rotate(-1deg);
     background-color:#9bd9e9;
-    
     border:0;
 }
-.cajas>h1{
+
+.cajas h1{
     padding-top: 20px;
     padding-left: 40px;
     font-size: 16px;
-   
-    font-weight: bold;
-    
-    
+    font-weight:bolder;
 }
+
+
 .cajas{
     margin-top:20px ;
     width: 250px;
     margin-left: 18px;
-    
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .cajas>p{
     padding-left: 40px;
-   padding-right: 40px;
-  padding-bottom: 20px;
-    
+    padding-right: 40px;
+    padding-bottom: 20px;
+  
 }
 
 .caja:nth-child(3n){
     margin-right: 0;
 }
 
+
 article h1{
     font-family: 'Microsoft sans serif';
 }
+
+/*aside registro*/
 #registro{
   
-    font-family: Georgia;
-    width: 290px;
    padding-left: 23px;
    padding-top: 22px;
    background-color: #9acefe;
@@ -298,7 +322,6 @@ article h1{
 width:240px ;
 height: 50px;
 background-color: #8ecd68;
-font-family: Georgia;
 font-size: 25px;
 color: white;
 border-radius:  5px;
@@ -310,24 +333,42 @@ border-color: #8ecd68;
 #registro>p{
     font-size: 12px;
 }
+
+/*Lista imagenes*/
 #listaImagenes{
    
     margin-top: 20px;
-    width: 290px;
     background-color:#edf1f0 ;
-   font-family: sans-serif;
     height: 380px;
     border-radius:  5px;
     border-color: lightgray;
 }
+#listaImagenes>img{
+  
+ 
+    list-style: none;
+    margin:5px;
+   vertical-align: left;
+   display: inline-block;
+   margin-left:15px;
 
+  
+}
 
+#listaImagenes>p{
+    
+    float: right;
+    font-size: 12px;
+    width: 220px;
+    vertical-align: left;
+ }
+
+/*who*/
 
 #who{
     
     margin-top: 20px;
     top: 900px;
-    width: 290px;
     background-color: blanchedalmond;
     padding-left: 10px;
     height: 490px;
@@ -351,37 +392,15 @@ border-color: #8ecd68;
 }
 
 #who>#roman{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman';
 
 }
-#listaImagenes>img{
-  
- 
-    list-style: none;
-    margin:5px;
-   vertical-align: left;
-   display: inline-block;
-   margin-left:15px;
-
-  
-}
 
 
 
 
+/*Botones de redes*/
 
-#listaImagenes>p{
-    
-   
-   float: right;
-  
-  
-   font-size: 12px;
-   width: 220px;
-   vertical-align: left;
-
-
-}
 
 #redes{
     margin-top: 20px;
@@ -408,6 +427,8 @@ border-color: #8ecd68;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     
 }
+
+
 #identica{
     background-color: #7ab3c7;
 }
@@ -420,12 +441,7 @@ border-color: #8ecd68;
     margin-left: 35px;
 }
 
-aside{
-    width: 290px;
-    float: right;
-    
-}
-
+/*footer listas descripcion*/
 
 
 footer{
@@ -435,17 +451,14 @@ footer{
     gray 0%,
     gray 50%,
     white 50%,
-    white 100%
-  );
+    white 100%);
     width: 1190px;
     float: left;
     color: black;
 
 }
 
-.azul{
-    color: #04756f;
-}
+
 
 
 #blanco{
@@ -456,7 +469,6 @@ footer{
     padding-top:20px;
     text-decoration: none;
     display: inline-block;
- 
    list-style: none;
    margin: 0;
    height: 95px;
@@ -469,13 +481,10 @@ footer{
     color: white;
 }
 
-
-
 #Drum{
     width: 200px;
     padding-left: 70px;
-    
-    
+  
 }
 
 #redes2{
@@ -510,6 +519,3 @@ font-size: 14px;
     width: 630px;
 }
 
-.azulO{
-    color: rgb(25, 25, 104);
-}
