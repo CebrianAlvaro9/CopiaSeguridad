@@ -26,7 +26,7 @@ class App {
 
         // voy a vargar el controlador. ProductController.php
 
-        $file = "app/controllers/$controllerName" . ".php";
+        $file = "../app/controllers/$controllerName" . ".php";
 
         if(file_exists($file)){
             require_once $file;

@@ -5,14 +5,14 @@
 
 /* fuentes */
 
+
+
 .font1{
     font-family: 'PT Sans', sans-serif;
 }
 
 .font2{
-
     font-family: Georgia;
-
 }
 
 .font3{
@@ -21,6 +21,8 @@
 }
 
 /*colores de letras*/
+
+
 
 #who>p,#who>b,.cajas>h1{
     color: rgb(25, 25, 104);
@@ -31,7 +33,7 @@
     
 }
 
-a,#about>h1,#schedule>h1,#festival>h1{
+a,#about>h1,#schedule>h1,#festival>h1,#sub{
     
     color: #04756f;
     text-decoration: none;
@@ -41,8 +43,16 @@ a,#about>h1,#schedule>h1,#festival>h1{
 body{
     margin:auto;
     width: 1190px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* con esta propiedad conseguimos que se mantengan las 
+    dimensiones de las cajas al aumentar o disminuir las cosas de dentro que contiene o al añadir paddings*/
 }
+
+/*EXPLICACION FLOATS*/
+
+/* Para que todo los elementos quedasen ordenados y en la posicion correcta les he dado su width correspondiente
+,los he ordenado en la estructura del html por el orden que aparecen en la pagina de izq a derecha y he utilizado
+las siguientes propiedades float left para los elementos mas a la izq y para los que van a su derecha float right
+de este forma se van quedando solos en su posicion correcta.*/
 
 /*header imagen logo*/
 header{
@@ -53,20 +63,27 @@ header{
 
 /*caracteristicas que comparten las listas de nav*/
 nav li{
-    display: inline-block;
+    display: inline-block; /* par que la lista se vea en lista horizontal*/
     background-color:rgb(238, 232, 232) ;
 
 }
 
 nav a{
-    
     text-decoration: none;
     color: grey;
     border: 100px;
-
 }
 
 /* primera lista de navegacion*/
+
+/*parte de login*/
+#login{
+    font-size: 12px;
+   
+}
+#login li{
+    background-color: white;
+}
 #primero{
     width: 590px;
     float: right;
@@ -75,10 +92,8 @@ nav a{
       
 }
 #primero li{
-  
     padding: 5px;
-    border-radius: 10px 10px 10px;
-   
+    border-radius: 10px 10px 10px; 
 }
 
 #linea{
@@ -99,15 +114,13 @@ nav a{
    
 }
 
-
-
 #secundario li{
-    padding: 5px;
-    border-radius: 10px 10px 0px 0px;
+   
+        padding: 5px;
+border-radius: 10px 10px 0px 0px; /*para que se rondeen las aristas de la lista excepto la parte que la corta la linea*/
 }
 #secundario ul{
     padding-left: 15px;
-   
     
 }
 
@@ -136,19 +149,22 @@ nav a{
     margin:0;
 }
 
-
+/*para darle la forma correcta a los botones ya que la zona del medio no esta redondeada*/
 
 #uno1{
-    border:gray solid;
+    border:gray solid 0.5px;
     border-radius: 10px 0px 0px 10px ;
+    box-shadow: rgba(0, 0, 0, 0.35) 1px 2px 2px,2px inset ;
 }
 #dos2{
-    border-top:gray solid;
-    border-bottom:gray solid;
+    border-top:gray solid 0.5px;
+    border-bottom: gray solid 0.5px;
+    border-left: none;
+    border-right: none;
 
 }
 #tres3{
-    border:gray solid;
+    border:gray solid 0.5px;
     border-radius: 0px 10px 10px 0px ;
 }
 
@@ -181,15 +197,16 @@ aside{
 
 #program>p{
     width: 620px;
-    display: inline-block;
+    display: inline-block;/*para poder poner la imagen a la izquierda del texto*/
 
 }
 
 #program>h1{
 font-size: 30px;
 
-font-weight: bolder;
+font-weight: bolder; /*para poner negrita un texto*/
 }
+
 /*imagen que va dentro del program*/
 
 #fp{
@@ -232,7 +249,7 @@ color:#ababab;
     /*festival*/
 
 #festival {
-    width: 890px;
+ width: 890px;
 padding-left: 18px;
 
 }
@@ -242,7 +259,9 @@ padding-left: 18px;
 }
 
 /*parte de las cajas*/
-
+/*He creado una caja dentro de una caja ya que al tener que dejar el tamaño original de las cajas al poner sombras 
+con los paddings no me lo ejecutaba correctamente. De este modo cree una caja dentro de cada caja para
+poder poner las sombras y las hice mas pequeñas utilizando los margins.*/
 .caja{
     width: 290px;
     height: 200px;
@@ -253,28 +272,29 @@ padding-left: 18px;
 }
 
 /*clases de las cajas*/
+
+/*para darles estilos a las cajas creo 4 clases en las que les dare una rotacion y color para luego aplicarlas
+en el html*/
+
 .uno{
     transform: rotate(1deg);
     background-color:#ffdbd5;
-    background-clip: content-box;
-    border:0;
+ 
 }
 .dos{
     transform: rotate(-1deg);
     background-color:#deefab;
-    background-clip: content-box;
-    border:0;
+
 }
 .tres{
     transform: rotate(1deg);
     background-color:#fefec2;
-    background-clip: content-box;
-    border:0;
+   
 }
 .cuatro{
     transform: rotate(-1deg);
     background-color:#9bd9e9;
-    border:0;
+
 }
 
 .cajas h1{
@@ -290,6 +310,9 @@ padding-left: 18px;
     width: 250px;
     margin-left: 18px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /* con la parte del shadow le doy las mismas sobras a todas las cajas */
+    background-clip: content-box;
+    border:0;
 }
 
 .cajas>p{
@@ -299,8 +322,11 @@ padding-left: 18px;
   
 }
 
+/* En esta parte le quito el margen que dejaba entre cajas ya que en la ultima caja de cada fila no puede haber margen
+ya que el aside ya tiene el margen que hay que aplicar para que cuadren perfectamente todos los elementos*/
 .caja:nth-child(3n){
     margin-right: 0;
+
 }
 
 
@@ -371,11 +397,11 @@ border-color: #8ecd68;
     
     margin-top: 20px;
     top: 900px;
-    background-color: blanchedalmond;
+    background-color:  #fefec2;
     padding-left: 10px;
     height: 490px;
     border-radius:  5px;
-    border-color:  blanchedalmond;
+    border-color: #fefec2;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transform: rotate(0.8deg);
 }
@@ -445,6 +471,9 @@ border-color: #8ecd68;
 
 /*footer listas descripcion*/
 
+/*Al meter dentro del footer la parte In partners with para solucionar la parte del cambio de color ya que hay una franja
+en negro he utilizado los gradientes*/
+
 
 footer{
     height: 300px;
@@ -461,11 +490,12 @@ footer{
 }
 
 
-
-
 #blanco{
     color: white;
 }
+
+/*Para que los elementos suban arriba en la parte de los links ya que las listas de descripcion
+que contenian pocos elementos se iban al fondo utilizo la propiedad vertical aling top que lo q hace es ponerlos arriba*/
 
 .final{
     padding-top:20px;
@@ -506,13 +536,13 @@ font-size: 14px;
     padding-left: 18px;
 }
 
-#ultimoh1{
+#ultimoh1{ 
+    /*le doy una with que ocupe todo el body para que no pueden subirlos elementos de la franja negra asi igual como el elemento del p*/
     padding-left: 18px;
     width: 1190px;
-    
     font-weight: bold;
     font-size: 35px;
-   margin-bottom:40px ;
+    margin-bottom:40px ;
 }
 
 #ultimop{
@@ -521,3 +551,12 @@ font-size: 14px;
     width: 630px;
 }
 
+/*para colocar la flecha lo que hecho es usar una posicion absoluta y colocarlo por cordenadas*/
+#arrow{
+    position: absolute;
+  top: 260px;
+  left: 230px;
+  width: 30px;
+  
+
+}
