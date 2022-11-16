@@ -1,0 +1,195 @@
+*{
+   
+    box-sizing: border-box;
+   
+}
+body{
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+h1{
+    font-size: 3em;
+   
+}
+p{
+    font-size: 1.25em;
+}
+ul{
+    list-style: none;
+}
+
+header{
+    background-color: black;
+}
+
+.container{
+    max-width: 1400px;
+}
+
+#logo{
+    margin: 0;
+    padding: 30px 40px;
+    width: 90%;
+}
+
+header.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color:white;
+}
+header a:hover{
+    color: grey;
+}
+
+.galeria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 2500px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+.texto{
+    margin-left: 20px;
+}
+.fotos-gym1 img{
+    width: 95%;
+}
+img{
+    width: 100%;  
+}
+.image img{
+    width: 100%; 
+}
+aside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 950px;
+    padding-bottom: 20px;
+
+}
+
+footer .container{
+    height: 200px;
+    display: flex;
+   
+   text-align: center;
+    background-color: black;
+    color: white;
+    flex-direction: column;
+   
+}
+footer img{
+    width: 100px;
+}
+footer li{
+    display: inline-block;
+}
+footer ul{
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    
+}
+
+/*reponsive*/
+
+@media (min-width: 720px) {
+    
+
+header .container{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header nav{
+    flex-direction: row;
+   
+    display: inline-block;
+    
+}
+header li{
+    display: inline-block;
+}
+#logo{
+  width: 30%;
+  margin:0;
+  padding-bottom: 0;
+  display: inline-block;
+}
+.fotos-gym1 img{
+    width: 30%;
+}
+.galeria{
+    margin: 0;
+height: 900px;
+width: 70%;
+display: inline-block;
+vertical-align: top;
+}
+
+img{
+ width: 10%;
+}
+
+aside{
+    width: 25%;
+    height: 0vh;
+    display: inline-block;
+    
+}
+.image img{
+    width: 100%;
+    display: inline-block;
+    flex-direction: row;
+}
+
+h1{
+    font-size: 2em;
+    margin:0;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+p{
+    font-size: 1em;
+    margin:0;
+    padding-bottom: 30px;
+}
+
+footer .container{
+    height: 200px;
+   width: 100%;
+   flex-direction: column;
+   text-align: center;
+   margin:0;
+   
+}
+footer ul{
+    padding-left: 360px;
+   
+}
+
+
+}
