@@ -27,7 +27,9 @@ ul{
 header{
     background-color: black;
 }
-
+.joan{
+    width: 100%;
+}
 
 
 #logo{
@@ -142,6 +144,8 @@ form{
 /*reponsive*/
 
 @media (min-width: 801px) {
+    
+    
   form{
     margin-left: 65%;
     width: 35%;
@@ -188,7 +192,7 @@ header a{
 }
 .galeria{
     margin: 0;
-width: 70%;
+width: 100%;
 display: inline-block;
 vertical-align: top;
 }
@@ -198,7 +202,7 @@ img{
 }
 
 aside{
-    width: 25%;
+    
    margin-bottom: 4%;
     display: inline-block;
     

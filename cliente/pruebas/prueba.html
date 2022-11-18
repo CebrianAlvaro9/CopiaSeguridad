@@ -7,8 +7,34 @@
     <script languaje="Javascript" src=prueba.js></script>
     <title>Document</title>
 </head>
-<body >
-    <input type="button" value="Genera una tabla" onclick="genera_tabla()">
+<body onload=" iniciar()" >
+
+   
+    <h1>Calculadora IMC</h1>
+    <form action="">
+      <label>Peso:</label> <input type="text" id="txtPeso">
+      <label>Altura:</label> <input type="text" id="txtAltura">
+      <button id="btnCalcular" type="button">Calcular</button>
+    </form>
+    <p id="imc"></p>
+    <ul id="b2">
+      <li class="b3"id="a1">16.00: Infrapeso (delgadez severa)</li> 
+      <li class="b3"id="a2">16.00 – 16.99: Infrapeso (delgadez moderada)</li>
+      <li class="b3"id="a3">17.00 - 18.49: Infrapeso (delgadez aceptable)</li>
+      <li class="b3"id="a4">18.50 - 24.99: Peso normal</li>
+      <li class="b3"id="a5">25.00 - 29.99: Sobrepeso</li>
+      <li class="b3" id="a6">30.00 - 34.99: Obeso (Tipo I)</li>
+      <li class="b3"id="a7">35.00 - 40.00: Obeso (Tipo II)</li>
+      <li class="b3"id="a8">>40.00: Obeso (Tipo III) </li>
+
+
+
+   
+    </ul>
+  
+    <br />
+    
+  
     
 </body>
 </html>

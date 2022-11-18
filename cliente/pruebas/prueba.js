@@ -1,23 +1,61 @@
-function genera_tabla() {
 
-    
-    var filas=['16.00: Infrapeso (delgadez severa)',' 16.00 – 16.99: Infrapeso (delgadez moderada)','17.00 - 18.49: Infrapeso (delgadez aceptable)','18.50 - 24.99: Peso normal','25.00 - 29.99: Sobrepeso','30.00 - 34.99: Obeso (Tipo I)','35.00 - 40.00: Obeso (Tipo II)','>40.00: Obeso (Tipo III)']
-    // Obtener la referencia del elemento body
-
-    var body = document.getElementsByTagName("body")[0];
-  
-    // Crea un elemento <table> y un elemento <tbody>
-   
-
-    document.createElement("ul");
-    for (var j = 0; j < filas.length; j++) {
-        var textoCelda = (filas[j]);
-        document.createElement("li");
-        document.write(textoCelda);
-        document.createElement("/li");
+    function iniciar() {
+        
+        btnCalcular = document.getElementById("btnCalcular");
+        btnCalcular.addEventListener("click", eliminar);
+        btnCalcular.addEventListener("click", clickBtnCalcular);
+      
+        
     }
-   
-
-    document.createElement("/ul");
   
-  }
+      function clickBtnCalcular() {
+        
+        var txtPeso = document.getElementById('txtPeso');
+        var peso = txtPeso.value;
+  
+        var txtAltura = document.getElementById('txtAltura');
+        var altura = txtAltura.value;
+  
+        var imc = peso / (altura * altura);
+       
+        document.getElementById('imc').innerHTML= "El IMC es: "+imc;
+
+        if(imc==16){
+          $id ="a1";
+       
+        }else if(imc>16&&imc<=16.99){
+          $id ="a2";
+        }else if(imc>16.99&&imc<=18.49){
+          $id ="a3";
+        }else if(imc>18.49&&imc<=24.99){
+          $id ="a4";
+        }else if(imc>24.99&&imc<=29.99){
+          $id ="a5";
+        }else if(imc>29.99&&imc<=34.99){
+          $id ="a6";
+        }   
+        else if(imc>34.99&&imc<=40){
+          $id ="a7";
+        }   
+        else if(imc>40){
+          $id ="a8";
+        }
+
+        document.getElementById($id).style.color="blue";
+        
+      
+      }
+
+
+      function eliminar(){
+
+       lista = document.getElementsByClassName("b3");
+       lista1 = document.getElementsByClassName("b3");
+       for(i=0;i<lista.length;i++){
+        
+         lista[i].style.color="black";
+         
+         console.log(lista1[i].textContent);
+
+       }
+      }
