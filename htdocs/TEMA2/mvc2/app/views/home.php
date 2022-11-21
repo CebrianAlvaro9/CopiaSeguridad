@@ -19,15 +19,22 @@
 
   <body>
 
-  <?php require __DIR__ . "/header.php" ?>
+  <?php require "header.php" ?>
 
     <!-- Begin page content -->
-    <main role="main" class="container">
-      <h1 class="mt-5">Menu Principal</h1>
-      <p class="lead"> Esto es el Menu principal</p>
-    </main>
 
-    <?php require __DIR__ . "/footer.php" ?>
+    <h1>Inventario de Productos</h1>
+    <table>
+    <?php foreach($products as $item):
+ ?>
+        <tr>
+            <td> Identificador: <?= $item[0] ?></td>
+            <td>Descripcion: <a href="/TEMA2/mvc2/public/product/show&id=<?= $item[0] ?>"><?= $item[1]?></a></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <?php require  "footer.php" ?>
  
   </body>
 </html>

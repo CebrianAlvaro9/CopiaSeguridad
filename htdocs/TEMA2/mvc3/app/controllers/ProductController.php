@@ -1,6 +1,8 @@
 <?php
 
-require "../Products.php";
+namespace App\Controllers;
+
+require "../models/Product.php";
 
 class ProductController{
     function __construct()
@@ -9,18 +11,13 @@ class ProductController{
 
     }//FIN CONSTRUCCTOR
 
-    function index(){
-        echo "<br> index clase PRODUCTCONTROLLER";
-        $products= Product::all();
-        require "../views/home.php";
+    public function index()
+    {
+        //buscar datos
+        $products = \App\Models\Product::all();
+        //pasar a la vista
+        require('../app/views/home.php');
     }// metodo home de Controller de mvc
 
-    function show(){
-
-        echo "<br> show clase PRODUCTCONTROLLER";
-        $id = $_GET["id"];
-        $product = Product::find($id);
-        require "../views/show.php";
-
-    }// 
+   
 }

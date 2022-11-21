@@ -1,5 +1,5 @@
 <?php
-
+namespace Core;
 class App {
     function __construct()
 
@@ -35,8 +35,10 @@ class App {
             die("No encontrado");
         }
     // existe el metodo en el controlador?
+
+        $controllerName= "\\App\\Controllers\\$controllerName";
         $controllerObject = new $controllerName;
-        
+     
         if(method_exists($controllerObject,$method)){
             $controllerObject->$method($arguments);
         }else{
