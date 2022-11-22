@@ -16,32 +16,20 @@
   <h1>Bienvenido <?= $_SESSION['name'] ?></h1>
 
   <h2>Lista de deseos</h2>
-  <h4><a href="?method=empty">Vaciar lista de deseos</a></h4>
-  <h4><a href="?method=close">Cerrar sesión</a></h4>
+
+
   <ul>
-    <pre>
-  <?php 
-  // var_dump($deseos);
-  // exit();
-  $deseos=$_SESSION['deseos'];
-  if (count($deseos)) {
-    foreach ($deseos as $id => $deseo) {
-      echo "<li> Deseo nº $id: " . $deseo . ' <a href="?method=delete&id=' . $id . '"> borrar</a> </li>';
-    }
-  } else {
-    echo "No hay deseos todavía";
-  }
-  ?>
-  </ul>
   
-  <hr>
-  <h2>Alta de nuevos deseos</h2>
-  <form action="?method=new" method="post">
-    <label for="new">Nuevo deseo</label>
-    <input type="text" name="new">
-    
-    <input type="submit" value="nuevo">
-  </form>
   
+
+  <form action="?method=subirfichero" method="post" enctype="multipart/form-data">
+        <p>
+        <label for="mifich" >Seleciona un fichero </label>
+        <input type="file" name="myfile" id="mifich">
+        <input type="submit" name= "envio" value="Enviar Fichero">
+        </p>
+     
+    </form>
+    <h4><a href="?method=close">Cerrar sesión</a></h4>
 </body>
 </html>

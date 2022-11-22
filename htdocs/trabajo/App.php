@@ -6,8 +6,7 @@
 class App
 {
 
-
-  public $dsn ="mysql:dbname=demo;host=localhost";
+  public $dsn ="mysql:dbname=agenda;host=localhost";
   public $user="root";
   public $bd;
   //constructor de la sesion
@@ -63,11 +62,13 @@ class App
 
   {
    $nombre= $_POST['name'];
-   $contra=$_POST['password'];
-    $sql = "select nombreusu, password from credenciales where nombreusu='".$nombre."' and password='".$contra."'";
-    $registros = $this->bd->query($sql);
+   $sql = "select password from credenciales where usuario='".$nombre."'";
+   $hash = $this->bd->query($sql);
+  foreach($hash as $fila){
+  $contra=$fila[0];    
+  }
 
-    if ($registros-> rowCount()==1 && !empty($_POST['name'])) {
+    if (password_verify($_POST['password'], $contra) && !empty($_POST['name'])) {
       $name = $_POST['name'];
       $password = $_POST['password'];
     } else {
@@ -76,7 +77,6 @@ class App
     }
     $_SESSION['name'] = $name;
     $_SESSION['password'] = $password;
-    $_SESSION['deseos'] = [];
     header('Location: index.php?method=home');
   }
 
@@ -152,4 +152,38 @@ class App
     setcookie(session_name(), '', time() - 7200, '/');
     header('Location: index.php?method=login');
   }
+
+  public function subirfichero(){
+   $type= $_FILES["myfile"]['type'];
+    if(isset($_POST["envio"])){
+      if($_FILES["myfile"]['size']<5242880){
+        if($type=='image/png'||$type=='image/jpg'||$type=='application/pdf'){
+
+          echo "Nombre del fichero" . $_FILES["myfile"]['name'];
+          echo "<br>Extension del fichero" . $_FILES["myfile"]['type'];
+          echo "<br>Tamaño del fichero " . $_FILES["myfile"]['size'];
+          
+          $destino = "Uploads/".$_FILES["myfile"]["name"];
+          echo  "<br>". $destino;
+         $flag= move_uploaded_file($_FILES["myfile"]["tmp_name"],$destino);
+          echo $flag ? "fichero subido correctamente" : "<br>fallo en la subida";
+          if($flag){
+              //subida ok
+          }else{
+              echo "<p> No has enviado ningun fichero";
+          }
+        }
+   
+         
+      }
+   
+     
+     
+  }else{
+      echo " No has enviado ningun fichero";
+  }
+  include('views/home.php');
+  }
+
+  
 }
