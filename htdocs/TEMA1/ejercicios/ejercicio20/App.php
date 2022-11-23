@@ -28,6 +28,7 @@ class App
   {
     if (isset($_SESSION['name'])) {
       header('Location: ?method=home');
+      
       return;
     } else {
 

@@ -26,7 +26,7 @@ try{
     $sql = "select nombreusu, password, dni from credenciales";
     $registros = $bd->query($sql);
     echo"<br> Numero de registros devueltos: ". $registros-> rowCount();
-
+    
     if ($registros->rowCount()>0){
         foreach($registros as $fila){
             echo "<br> Nombre de usuario: " .$fila[0];

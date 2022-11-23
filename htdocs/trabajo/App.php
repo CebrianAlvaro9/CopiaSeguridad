@@ -47,13 +47,19 @@ class App
  
 
     if (isset($_SESSION['name'])) {
+     
       header('Location: ?method=home');
+
       return;
+     
     } else {
+     
     
       setcookie(session_name(), '', time() - 7200, '/');
       // este else es para borrar la sesion vacia que se crea al entrar al metodo login en el caso de estar los campos vacios de name y password
     }
+    
+
     include('views/login.php');
   }
   
@@ -71,6 +77,16 @@ class App
     if (password_verify($_POST['password'], $contra) && !empty($_POST['name'])) {
       $name = $_POST['name'];
       $password = $_POST['password'];
+      $sql = "CREATE TABLE contactos( ".
+      "tipo VARCHAR(100) NOT NULL, ".
+      "nombre VARCHAR(100) NOT NULL, ".
+      "apellido VARCHAR(100), ".
+      "email VARCHAR(100), ".
+      "direccion VARCHAR(100) NOT NULL, ".
+      "numero INT NOT NULL); ";
+    
+      $create = $this->bd-> prepare($sql);
+      $create->execute();
     } else {
       header('Location: ?method=login');
       return;
@@ -147,10 +163,16 @@ class App
 //borra todas las sessiones creadas y redirige al metodo login
   public function close()
   {
-
     session_destroy();
     setcookie(session_name(), '', time() - 7200, '/');
     header('Location: index.php?method=login');
+    $sql = "drop table contactos; ";
+  
+    $create = $this->bd-> prepare($sql);
+    $create->execute();
+    
+
+
   }
 
   public function subirfichero(){
@@ -162,28 +184,81 @@ class App
           echo "Nombre del fichero" . $_FILES["myfile"]['name'];
           echo "<br>Extension del fichero" . $_FILES["myfile"]['type'];
           echo "<br>Tamaño del fichero " . $_FILES["myfile"]['size'];
-          
-          $destino = "Uploads/".$_FILES["myfile"]["name"];
+          $nametemp=$_FILES["myfile"]["tmp_name"];
+          $destino = 'uploads/'.$_FILES["myfile"]["name"];
           echo  "<br>". $destino;
-         $flag= move_uploaded_file($_FILES["myfile"]["tmp_name"],$destino);
+         $flag= move_uploaded_file($nametemp,$destino);
           echo $flag ? "fichero subido correctamente" : "<br>fallo en la subida";
           if($flag){
               //subida ok
           }else{
-              echo "<p> No has enviado ningun fichero";
+              echo "<p> No has enviado ningun fichero ";
           }
         }
    
          
-      }
-   
-     
-     
+      } 
   }else{
       echo " No has enviado ningun fichero";
   }
   include('views/home.php');
   }
 
+public function crear(){
+  $sql = "CREATE TABLE contactos( ".
+  "tipo VARCHAR(100) NOT NULL, ".
+  "nombre VARCHAR(100) NOT NULL, ".
+  "apellido VARCHAR(100), ".
+  "email VARCHAR(100), ".
+  "direccion VARCHAR(100) NOT NULL, ".
+  "numero INT NOT NULL); ";
+
+  $create = $this->bd-> prepare($sql);
+  $create->execute();
+}
+
+
+
+
+
+
+ public function insertarXML(){
+
+$datos = simplexml_load_file("agenda.xml");
+
+foreach ($datos->children() as $fila) {
+   
+   $sentencia = $this->bd-> prepare("INSERT INTO contactos (tipo,nombre,apellido,email,direccion,numero) VALUES (?,?,?,?,?,?)");
+   $atributo = $fila->attributes(); 
+
+    $tipo1 = $atributo['tipo'];
+    $nombre = $fila->nombre;
+    $apellido = $fila->apellidos;
+    $email=$fila->email;
+    $direccion= $fila->direccion;
+    $telefono= $fila->telefono;
+    $sentencia->bindParam(1,$tipo1);
+    $sentencia->bindParam(2,$nombre);
+    $sentencia->bindParam(3,$apellido);
+    $sentencia->bindParam(4,$email);
+    $sentencia->bindParam(5,$direccion);
+    $sentencia->bindParam(6,$telefono);
+    $sentencia->execute();
+}
+
+include('views/home.php');
+
+ }
+
+ public function mostrar(){
+
+
+  $sql = ("SELECT * FROM contactos");
+  $registros =$this->bd->query($sql);
+  $contador=0;
+  
+
+include('views/home.php');
+ }
   
 }
