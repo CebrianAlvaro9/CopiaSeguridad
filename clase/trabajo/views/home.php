@@ -16,9 +16,6 @@
 </head>
 <body>
 
-
-
-
   <header>
   <h1>AGENDA CONTACTOS</h1>
   </header>
@@ -34,7 +31,7 @@
 <form action="?method=ocultar" method="post">
 <input type="submit" value="ocultar">
 </form>
-
+<!-- Registros recoge de la varible moster el array y lo recorre para mostrarlo -->
 <?php
 foreach($registros as $fila){
 
@@ -58,36 +55,27 @@ foreach($registros as $fila){
 <div class="right">
 <h3>INSERTAR AGENDA DE CONTACTOS CON ARCHIVO XML</h3>
  <form action="?method=insertarXML" method="post">
- <input class="btn btn-dark" type="submit" value="insertar">
+ <input  type="submit" value="insertar">
  </form>
 
 
 
   <h3>INSERTAR CONTACTO EN LA AGENDA</h3>
-  
-  <form action="?method=insertar" method="post">
 
-    <label for="">Tipo </label>
-    <input type="text" name="tipo">
-    <br>
-    <label for="">nombre </label>
-    <input type="text" name="name">
-    <br>
-    <label for="">apellido  </label>
-    <input type="text" name="apellido">
-    <br>
-    <label for="">email  </label>
-    <input type="text" name="email">
-    <br>
-    <label for="">direccion </label>
-    <input type="text" name="direccion">
-    <br>
-    <label for="">telefono  </label>
-    <input type="number" name="telefono">
-    <br>
-    <input type="submit" value="insertar">
+  <p>Elige el tipo que quieres ingresar</p>
+
+  <form action="?method=seleccionar" method="post">
+   <select name="Tipo">
+  <option value="1">EMPRESA</option>
+  <option value="2" >PERSONA</option>
+  <input type="submit" value="seleccionar">
+  </select>
   </form>
+  <!-- Mensaje muestra el formulario segun el tipo que has selecionado-->
+  <?php echo $mensaje?>
+
   <?php echo $respuesta1?>
+
   <h3>ELIMINAR UN CONCTACTO POR NUMERO DE TELEFONO</h3>
   <form action="?method=eliminar" method="post">
   <label for="">telefono  </label>
@@ -103,6 +91,8 @@ foreach($registros as $fila){
   </form>
   <?php echo $respuesta4?>
   <?php
+
+  /** Muestra los datos del contacto que has elegido por numero de telefono */
 
   foreach($contacto as $fila){
 
@@ -125,31 +115,17 @@ foreach($registros as $fila){
 
 <h3>ACTUALIZAR UN CONTACTO POR NUMERO DE TELEFONO</h3>
   
-  <form action="?method=actualizar" method="post">
-  
-    <label for="">telefono  </label>
-    <input type="text" name="telefono">
-    <br>
-    <label for="">Tipo </label>
-    <input type="text" name="tipo">
-    <br>
-    <label for="">nombre </label>
-    <input type="text" name="name">
-    <br>
-    <label for="">apellido  </label>
-    <input type="text" name="apellido">
-    <br>
-    <label for="">email  </label>
-    <input type="text" name="email">
-    <br>
-    <label for="">direccion </label>
-    <input type="text" name="direccion">
-    <br>
-    <label for="">telefono  </label>
-    <input type="number" name="telefono2">
-    <br>
-    <input type="submit" value="insertar">
+
+<form action="?method=seleccionarAc" method="post">
+   <select name="tipo">
+  <option value="1">EMPRESA</option>
+  <option value="2" >PERSONA</option>
+  <input type="submit" value="seleccionar">
+  </select>
   </form>
+  <?php echo $mensaje1?>
+
+
   <?php echo $respuesta3?>
   <form action="?method=subirfichero" method="post" enctype="multipart/form-data">
         <p>
@@ -164,7 +140,7 @@ foreach($registros as $fila){
         
    ?>
 </div>
- 
+ <!--link para cerrar la sesion -->
 
     <h4><a href="?method=close">Cerrar sesión</a></h4>
 
