@@ -11,20 +11,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+<link rel="stylesheet" href="views/views.css">
 </head>
 <body>
-<?php require "header.php" ?>
-<ul>
 
-<h1>Bienvenido <?= $_SESSION['name'] ?></h1>
 
- <h3>LISTA DE CONTACTOS ACTUAL</h3>
+
+
+  <header>
+  <h1>AGENDA CONTACTOS</h1>
+  </header>
+
+<div class="izq"><h1>Bienvenido <?= $_SESSION['name'] ?></h1>
+
+<h3>LISTA DE CONTACTOS ACTUAL</h3>
 
 <form action="?method=mostrar" method="post">
 <input type="submit" value="mostrar">
 </form>
+<br>
 <form action="?method=ocultar" method="post">
 <input type="submit" value="ocultar">
 </form>
@@ -32,27 +38,31 @@
 <?php
 foreach($registros as $fila){
 
-  
-  echo "<br> TIPO: " .$fila[0];
-  echo "<br> nombre: " .$fila[1];
-  if(!empty($fila[2])){
-    echo "<br> apellido:". $fila[2];
-  }else{
-    echo "<br> email: ". $fila[3];
-  }
-  echo "<br> direccion: " .$fila[4];
-  echo "<br> telefono: " .$fila[5];
-  
+ 
+ echo "<br> TIPO: " .$fila[0];
+ echo "<br> nombre: " .$fila[1];
+ if(!empty($fila[2])){
+   echo "<br> apellido:". $fila[2];
+ }else{
+   echo "<br> email: ". $fila[3];
+ }
+ echo "<br> direccion: " .$fila[4];
+ echo "<br> telefono: " .$fila[5];
+ echo "<br>";
+ 
 }
 
 ?>
 
-  <h3>INSERTAR AGENDA DE CONTACTOS CON ARCHIVO XML</h3>
-  <form action="?method=insertarXML" method="post">
-  <input class="btn btn-dark" type="submit" value="insertar">
-  </form>
+</div>
+<div class="right">
+<h3>INSERTAR AGENDA DE CONTACTOS CON ARCHIVO XML</h3>
+ <form action="?method=insertarXML" method="post">
+ <input class="btn btn-dark" type="submit" value="insertar">
+ </form>
 
-  <ul>
+
+
   <h3>INSERTAR CONTACTO EN LA AGENDA</h3>
   
   <form action="?method=insertar" method="post">
@@ -73,24 +83,27 @@ foreach($registros as $fila){
     <input type="text" name="direccion">
     <br>
     <label for="">telefono  </label>
-    <input type="text" name="telefono">
+    <input type="number" name="telefono">
     <br>
     <input type="submit" value="insertar">
   </form>
-
+  <?php echo $respuesta1?>
   <h3>ELIMINAR UN CONCTACTO POR NUMERO DE TELEFONO</h3>
   <form action="?method=eliminar" method="post">
   <label for="">telefono  </label>
-  <input type="text" name="telefono">
+  <input type="number" name="telefono">
     <input type="submit" value="borrar">
   </form>
+  <?php echo $respuesta2?>
   <h3>VISUALIZAR INFORMACION DE UN CONTACTO</h3>
   <form action="?method=infoContacto" method="post">
   <label for="">telefono  </label>
-  <input type="text" name="telefono">
-    <input type="submit" value="mostrar1">
+  <input type="number" name="telefono">
+  <input type="submit" value="mostrar">
   </form>
+  <?php echo $respuesta4?>
   <?php
+
   foreach($contacto as $fila){
 
     
@@ -133,10 +146,11 @@ foreach($registros as $fila){
     <input type="text" name="direccion">
     <br>
     <label for="">telefono  </label>
-    <input type="text" name="telefono2">
+    <input type="number" name="telefono2">
     <br>
     <input type="submit" value="insertar">
   </form>
+  <?php echo $respuesta3?>
   <form action="?method=subirfichero" method="post" enctype="multipart/form-data">
         <p>
         <label for="mifich" >Seleciona un fichero </label>
@@ -145,6 +159,12 @@ foreach($registros as $fila){
         </p>
      
     </form>
+    <?php
+    echo $flag
+        
+   ?>
+</div>
+ 
 
     <h4><a href="?method=close">Cerrar sesión</a></h4>
 

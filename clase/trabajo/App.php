@@ -144,28 +144,20 @@ class App
       if($_FILES["myfile"]['size']<5242880){
         if($type=='image/png'||$type=='image/jpg'||$type=='application/pdf'){
 
-          echo "Nombre del fichero" . $_FILES["myfile"]['name'];
-          echo "<br>Extension del fichero" . $_FILES["myfile"]['type'];
-          echo "<br>Tamaño del fichero " . $_FILES["myfile"]['size'];
+        
           $nametemp=$_FILES["myfile"]["tmp_name"];
           $destino = 'uploads/'.$_FILES["myfile"]["name"];
-          echo  "<br>". $destino;
+         
          $flag= move_uploaded_file($nametemp,$destino);
-          echo $flag ? "fichero subido correctamente" : "<br>fallo en la subida";
-          if($flag){
-              //subida ok
-          }else{
-              echo "<p> No has enviado ningun fichero ";
-          }
-        }
-   
+         $flag ? "fichero subido correctamente" : "<br>fallo en la subida";
          
       } 
   }else{
-      echo " No has enviado ningun fichero";
+   
   }
   include('views/home.php');
   }
+}
 
 public function crear(){
   $sql = "CREATE TABLE contactos( ".
@@ -186,8 +178,8 @@ public function crear(){
 $datos = simplexml_load_file("agenda.xml");
 
 foreach ($datos->children() as $fila) {
-   
-   $sentencia = $this->bd-> prepare("INSERT INTO contactos (tipo,nombre,apellido,email,direccion,numero) VALUES (?,?,?,?,?,?)");
+
+    $sentencia = $this->bd-> prepare("INSERT INTO contactos (tipo,nombre,apellido,email,direccion,numero) VALUES (?,?,?,?,?,?)");
    $atributo = $fila->attributes(); 
 
     $tipo1 = $atributo['tipo'];
@@ -203,6 +195,8 @@ foreach ($datos->children() as $fila) {
     $sentencia->bindParam(5,$direccion);
     $sentencia->bindParam(6,$telefono);
     $sentencia->execute();
+   
+   
 }
 
 include('views/home.php');
@@ -229,6 +223,8 @@ include('views/home.php');
 
 public function insertar(){
 
+  if(!empty($_POST['tipo'])&&!empty($_POST['name'])&&!empty($_POST['direccion'])&&!empty($_POST['telefono'])){
+
   $sentencia = $this->bd-> prepare("INSERT INTO contactos (tipo,nombre,apellido,email,direccion,numero) VALUES (?,?,?,?,?,?)");
   $sentencia->bindParam(1,$_POST['tipo']);
     $sentencia->bindParam(2,$_POST['name']);
@@ -237,28 +233,45 @@ public function insertar(){
     $sentencia->bindParam(5,$_POST['direccion']);
     $sentencia->bindParam(6,$_POST['telefono']);
     $sentencia->execute();
+  }else{
+    $respuesta1="<p style= 'color:red'> Rellena todos los campos necesarios</p>";
+  }
     include('views/home.php');
+
 }
 
 public function eliminar(){
+  if(!empty($_POST['telefono'])){
   $sentencia = $this->bd-> prepare("delete from contactos where numero ='".$_POST['telefono']."'");
   $sentencia->execute();
+  }else{
+    $respuesta2="<p style= 'color:red'> Tienes que rellenar el campo telefono </p>";
+  }
   include('views/home.php');
 }
 
 public function actualizar(){
+  if(!empty($_POST['telefono'])){
   
   $sentencia = $this->bd-> prepare("UPDATE contactos SET tipo='".$_POST['tipo']."',nombre='".$_POST['name']."',apellido='".$_POST['apellido']."',email='".$_POST['email']."',direccion='".$_POST['direccion']."',numero='".$_POST['telefono2']."'  where numero ='".$_POST['telefono']."'");
   
   $sentencia->execute();
+  }else{
+    $respuesta3="<p style= 'color:red'>Tienes que rellenar el campo telefono que quieres actualizar  </p>";
+  }
   include('views/home.php');
 
 }
 
 public function infoContacto(){
+
+  if(!empty($_POST['telefono'])){
+
   $sql = ("SELECT * FROM contactos where numero ='".$_POST['telefono']."'");
   $contacto =$this->bd->query($sql);
-
+  }else{
+    $respuesta4=" <p style= 'color:red'> Tienes que rellenar el campo telefono </p>";
+  }
   include('views/home.php');
 
 
