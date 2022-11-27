@@ -1,7 +1,7 @@
 <?php
 
 require "../app/models/Products.php";
-
+//
 class ProductController{
     function __construct()
     {

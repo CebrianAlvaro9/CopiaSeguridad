@@ -2,9 +2,9 @@
 
 //fichero que simula el modelo con datos
 
-use Core\Model;
 
-class Product extends Model{
+
+class Product {
     const PRODUCTS = [
         array(1,'cortacesped'),
         array(2,'Pizarra'),

@@ -55,14 +55,14 @@ class App
   }
   
   // Comprueba que los campos se hayan enviado guardas los post en dos variables y crea las sesiones con ellas
-  public function auth()
+  
 
   //Para este metodo auth primero busco si existe un nombre igual al introducido dentro de la base de datos y extraigo
   //su contraseña debido a que esta contraseña se encuentra en codigo hash para ello lo que hacemos es utilizar la funcion
   //password verify que comprueba si el hash coincide con la contraseña introducida y devuelve true o false
   //En este entraria dentro del if y dropearia la tabla contactos en el caso de existir y la crearia otra vez de nuevo
   //aparte creia una session para el usuario
-  {
+  public function auth(){
    $nombre= $_POST['name'];
    $sql = "select password from credenciales where usuario='".$nombre."'";
    $hash = $this->bd->query($sql);

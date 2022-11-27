@@ -19,22 +19,20 @@
 
   <body>
 
-  <?php require "header.php" ?>
 
-    <!-- Begin page content -->
 
-    <h1>Inventario de Productos</h1>
+  <h1>Inventario de Productos aa</h1>
     <table>
-    <?php foreach($products as $item):
+    <?php 
+    foreach($products as $product):
  ?>
         <tr>
-            <td> Identificador: <?= $item[0] ?></td>
-            <td>Descripcion: <a href="../public/product/show&id=<?= $item[0] ?>"><?= $item[1]?></a></td>
+            <td> Identificador: <?= $product->id ?></td>
+            <td>Descripcion: <a href="../public/product/show&id=<?= $product->id ?>"><?= $product->name?></a></td>
         </tr>
         <?php endforeach; ?>
-    </table>
 
-    <?php require  "footer.php" ?>
+
  
   </body>
 </html>
