@@ -1,0 +1,3 @@
+Examen realizado con xamp, poner contraseña base de datos
+Porfavor ten en cuenta que no he podido probar los links al no usar mv.local y usar xamp
+deberia ir correctamente pero he tenido q probar todo a mano escribiendo las rutas a mano en el navegador

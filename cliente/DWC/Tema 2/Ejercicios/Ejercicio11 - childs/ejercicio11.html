@@ -1,0 +1,42 @@
+<!--
+    - Generar una variable que contenga todos los hijos de 'div1'
+    para ello usar la propiedad childNodes
+    usar además los atributos firstChild y lastChild para ver sus hijos
+
+    - Generar la lista desordenada en HTML y usar las propiedades
+    nextSibling y previousSibling para moverse entre los nodos hermanos
+
+    <ul>
+        <li id="item1">elemnto primero</li><li id="item2">elemento segundo</li>
+    </ul>
+
+    - Qué pasa si tengo espacios o más elementos entre los elementos tipo 'li'?
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="ejercicio11.js"></script>
+</head>
+<body>
+    <div id="div1">
+        <p id="n1">node 1</p>
+        <p id="n2">node 2</p>
+        <p id="n3">node 3</p>
+    </div>
+
+    <input type="button" value="Hijos" onclick="hijos();">
+
+    <ul id="ul1">
+        <li id="item1">elemento primero</li>
+        <li id="item2">elemento segundo</li>
+    </ul>
+
+    <input type="button" value="Hijos Lista" onclick="hijosLista();">
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!--
+    Realizar dos bucles anidados donde el objetivo es sacar por consola con (console.log)
+    la siguiente información:
+
+    valor de i: 0
+        valor de j: (0, 0)
+        valor de j: (0, 1)
+    valor de j: (0, 2)
+    valor de i: 1
+        valor de j: (1, 0)
+        valor de j: (1, 1)
+    valor de j: (1, 2)
+    …
+
+    será sacada a partir de una matriz de 10 x 3 elementos y el resultado 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <script>
+        for (var i = 0; i < 10; i++) {
+            console.log("valor i: " + i);
+            for (var j = 0; j < 3; j++) {
+                console.log("\tvalor j: (" + i + ", " + j + ")");
+            }
+        }
+    </script>
+</body>
+</html>

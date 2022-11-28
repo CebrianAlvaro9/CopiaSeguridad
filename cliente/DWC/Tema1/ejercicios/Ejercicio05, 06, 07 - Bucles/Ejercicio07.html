@@ -1,0 +1,37 @@
+<!--
+    Indica de forma descendente si los números del 1 al 50 son par o son impar.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <script>
+        for (var i = 50; i >= 1; i--) {
+            if(i%2 == 0){
+                document.write(i + " es par<br>");
+            }else{
+                document.write(i + " es impar<br>");
+            }
+        }
+
+
+        document.write("<br><br>");
+
+        var x = 50;
+        while(x >= 1){
+            if(x%2 == 0){
+                document.write(x + " es par<br>");
+            }else{
+                document.write(x + " es impar<br>");
+            }
+            x--;
+        }
+    </script>
+</body>
+</html>

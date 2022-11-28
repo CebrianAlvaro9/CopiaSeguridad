@@ -1,0 +1,25 @@
+<!--
+    Realizar una función división que calcule el resultado de un dividendo/divisor donde ambos serán pedidos por pantalla.
+    En caso de que el divisor sea igual a 0, se mostrará un mensaje alertando que no es posible hacer la división por 0, sino mostrará el resultado.
+    Utilizar (condición ? resultado true : resultado false)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <script>
+        do{
+            var dividendo = parseInt(prompt("dividendo?"));
+            var divisor = parseInt(prompt("divisor?"));
+        }while(isNaN(dividendo) || isNaN(divisor));
+        parseInt()
+        divisor == 0 ? document.write("El divisor no puede ser 0.") : document.write("El resultado de dividir " + dividendo + " entre " + divisor + " es: " + dividendo/divisor);
+    </script>
+</body>
+</html>
