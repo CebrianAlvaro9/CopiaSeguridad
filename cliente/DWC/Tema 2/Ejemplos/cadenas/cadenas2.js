@@ -37,5 +37,5 @@ function arrayDeDatos() {
 
     // copiar array
     var copiaArray = arrayDatos2.slice();
-    console.log("el tipo de dato de la variable arrayDatos2[2] " + arrayDatos[2] + " es: " + typeof(arrayDatos2[2]));
+    console.log("el tipo de dato de la variable arrayDatos2[2] " + arrayDatos2[2] + " es: " + typeof(arrayDatos2[2]));
 }

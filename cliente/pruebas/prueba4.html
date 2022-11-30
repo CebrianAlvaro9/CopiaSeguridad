@@ -10,12 +10,52 @@
 
 
    
-    <body onload="generarTablaDinamica()">
-        <div id="divTablaDinamica"></div>
-        <input type="button" value="Genera una tabla" onclick="genera_tabla()">
-        <input type="button" value="Genera una tabla" onclick="genera_tabla2()">
-    </body>
+    <body onload="iniciar() ">
+        
+       <div>
+
+        <h1>Tabla Clases</h1>
+        <div id="uno">
+            
+        </div>
+        <form action="">
+            <label>Pilates</label> <input type="checkbox" name="Juan"id="pilates">
+            <label>Spinning</label> <input type="checkbox" name="Juan"id="spinning">
+            <label>Bodycombat</label> <input type="checkbox" name="Juan"id="bodycombat">
+            <label>Zumba</label> <input type="checkbox" name="Juan"id="zumba">
+            <label>Boxeo</label> <input type="checkbox" name="Juan"id="boxeo">
+            <button id="btnClase" type="button">Seleccionar Clases</button>
+          </form>
     
+          <button id="tablaClases" > Genera Clases</button >
+       
+       </div>
+
+<div>
+    <h1>Tabla Fisios</h1>
+    <div id="dos">
+
+    </div>
+   
+
+
+    <form action="">
+      
+        <label>Juan</label> <input type="radio" name="Juan"id="Juan">
+        <label>Aitor</label> <input type="radio" name="Juan"id="Aitor">
+        <label>Paco</label> <input type="radio" name="Juan"id="Paco">
+        <label>Camilo</label> <input type="radio" name="Juan"id="Camilo">
+        <label>Miguel</label> <input type="radio" name="Juan"id="Miguel">
+        <button id="btnFisio" type="button">Seleccionar Fisio</button>
+    </form>
+
+</div>
+<button id="tablaFisios" > Genera Fisios</button >
+
+         
+     
+    </body>
+   
   
     
 

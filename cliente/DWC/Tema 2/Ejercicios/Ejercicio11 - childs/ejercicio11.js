@@ -1,9 +1,8 @@
 function hijos() {
-    var hijosdiv1 = document.getElementById("div1").childNodes;
-    
+    var hijosdiv1 = document.getElementById("div1").childNodes; 
     let text;
     for (let i = 0; i < hijosdiv1.length; i++) {
-        text += hijosdiv1[i].nodeValue + "<br>";
+        text += hijosdiv1[i].textvalue + "<br>";
     }
 
     document.writeln(text);

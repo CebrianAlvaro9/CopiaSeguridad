@@ -1,5 +1,5 @@
 function main() {
-    cadenas();
+    cadena();
 }
 
 function cadena() {
@@ -17,11 +17,11 @@ function cadena() {
     // para hacer búsquedas dentro de cadenas usaremos:
     var cadenaABuscar = "comi";
     var indice = 0;
-    cadena.index(cadenaABuscar, indice);
+    cadena.indexOf(cadenaABuscar, indice);
 
     // uso de subcadenas, posición inicial, caracteres.
     var posicionInicial = 2;
-    var caracteres = 9;
+    var caracteres = 9; 
     var miSubcadena = cadena1.substring(posicionInicial, caracteres);
     
     // división de subcadenas a partir de un elemento divisorio
