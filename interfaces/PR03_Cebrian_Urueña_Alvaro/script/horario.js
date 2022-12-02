@@ -13,30 +13,37 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
     btnClases.addEventListener("click", eliminar);
     btnFisio.addEventListener("click", fisio);
     btnClases.addEventListener("click", clase);
+
     let boton2=document.querySelector("#tablaFisios");
     boton2.addEventListener("click",()=>{
         var horas1 = ["","10:00 - 10:45","10:45 - 11:30","11:30 - 12:15","13:00 - 13:45","17:00 - 17:45","17:45 - 18:30","18:30 - 18:15","19:00 - 19:45","19:45 - 20:30","20:30 - 21:15"];
         var div1="dos"
         var id="tabla2";
-        genera_tablas(div1,id,sesiones1,horas1);
-        visibilidad("btnClase","clases");
+        var boton="tablaFisios";
+        var formu="fisios";
+        genera_tablas(div1,id,sesiones1,horas1,boton,formu);
+     
         
     });
+
     let boton1=document.querySelector("#tablaClases");
     boton1.addEventListener("click",()=>{
         var horas = ["","9:00 - 10:00","10:00 - 11:00","11:00 - 12:00","12:00 - 13:00","13:00 - 14:00","14:00 - 15:00","15:00 - 16:00","16:00 - 17:00","17:00 - 18:00","18:00 - 19:00","19:00 - 20:00","20:00 - 21:00"];
         var div1="uno"
         var id="tabla1";
-        genera_tablas(div1,id,sesiones,horas);
-        visibilidad("btnFisio","fisios");
+        var boton="tablaClases";
+        var formu="clases";
+        genera_tablas(div1,id,sesiones,horas,boton,formu);
+      
     });
+
 }
 
 function visibilidad(boton,form){
  var formu=getElementById(form);
  var boton1=getElementById(boton);
-boton1.style.visibility = "hidden";
-formu.style.visibility = "visible";
+boton1.css("display","none")
+formu.style.visibility = "hidden";
 
 
 }
@@ -63,7 +70,7 @@ function fisio(){
      
         if(lista[i].textContent==fisio){
 
-        lista[i].style.color="blue";
+        lista[i].style.color="red";
         }else{
             lista[i].style.color="white";  
         }
@@ -92,7 +99,7 @@ function clase(){
     for(i=0;i<lista.length;i++){
         for(j=0;j<clase.length;j++){
         if(lista[i].textContent==clase[j]){
-        lista[i].style.color="blue"; 
+        lista[i].style.color="red"; 
     }
       console.log(lista[i].textContent);
     }
@@ -112,7 +119,7 @@ function eliminar(){
     }
 }
 
-function genera_tablas(div1,id,clase,horas ){
+function genera_tablas(div1,id,clase,horas,boton,formu ){
     var diasDeLaSemena = ["", "Lunes","Martes","Miercoles","Jueves", "viernes","sabado"];
     if (document.querySelector("#"+id)==null){
 
@@ -157,6 +164,10 @@ function genera_tablas(div1,id,clase,horas ){
         div.appendChild(tabla);
       
         tabla.setAttribute("border", "2");
+        
+       document.getElementById(boton).style.visibility = "hidden";
+       document.getElementById(formu).style.visibility = "visible";
+
         
     }
        

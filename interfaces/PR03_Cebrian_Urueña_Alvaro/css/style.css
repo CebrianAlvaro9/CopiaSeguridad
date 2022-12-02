@@ -413,15 +413,24 @@ footer{
     max-height: 0;
   }
 
-.ejer3{
+.ejer3,.ejer2,.ejer1{
     width: 100%;
+    text-align: center;
+    margin-top: 10%;
 }
 .ejer3 form {
 
 font-size: 1vh;
 display: inline-block;
 width: 75%;
-margin-left:  12%;
+
+}
+
+.ejer1 form{
+    display: inline-block; 
+}
+.ejer2 form{
+    display: inline-block; 
 }
 .ejer3 input {
 
@@ -565,3 +574,6 @@ table{
     margin-bottom: 5%;
 }
 
+#clases,#fisios{
+    visibility: hidden;
+}
