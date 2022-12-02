@@ -5,43 +5,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <script languaje="Javascript" src="../script/imc.js"></script>
+    <script languaje="Javascript" src="../script/fcm.js"></script>
+    <script languaje="Javascript" src="../script/horario.js"></script>
     <title></title>
 </head>
-<body>
+<body onload=" iniciar()">
+
 
     <header>
-
-       
+  
         <div class="container">
             <img id="logo" src="../img/logonegro.png" alt="">
-            <nav>
-                <ul>
-                   <li><a a href="../index.html">HOME</a></li>
-                   <li><a a href="../index.html">HOME</a></li>
-                   <li><a a href="../index.html">HOME</a></li>
-                   
+            <label for="menu-toggle" id="to"> MENU</label>
+            <input type="checkbox" id="menu-toggle"/>
+            <nav id="menu">
+                <ul  >
+                    <li><a href="app.html">APP</a></li> 
+                   <li><a href="html/login.html">LOGIN</a></li>
+                   <li><a href="">REGISTRATE!</a></li> 
                 </ul>
             </nav>
+            
         </div>
-    
-    
     
         
     </header>
+
+    <div  class="ejer1">
+           
+    <h1>Calculadora IMC</h1>
+    <form action="">
+      <label>Peso:</label> <input type="text" id="txtPeso">
+      <label>Altura:</label> <input type="text" id="txtAltura">
+      <button id="btnCalcular" type="button">Calcular</button>
+    </form>
+    <p id="imc"></p>
+    <ul id="b2">
+      <li class="b3"id="a1">16.00: Infrapeso (delgadez severa)</li> 
+      <li class="b3"id="a2">16.00 – 16.99: Infrapeso (delgadez moderada)</li>
+      <li class="b3"id="a3">17.00 - 18.49: Infrapeso (delgadez aceptable)</li>
+      <li class="b3"id="a4">18.50 - 24.99: Peso normal</li>
+      <li class="b3"id="a5">25.00 - 29.99: Sobrepeso</li>
+      <li class="b3" id="a6">30.00 - 34.99: Obeso (Tipo I)</li>
+      <li class="b3"id="a7">35.00 - 40.00: Obeso (Tipo II)</li>
+      <li class="b3"id="a8">>40.00: Obeso (Tipo III) </li>
+
+    </ul>
+  
+    <br />
+
+    </div>
+
+    <div class="ejer2">
+
+    <h1>Calculadora FCM</h1>
+    <form action="">
+      <label>EDAD</label> <input type="number" minlength="1" id="txtEdad">
+      <select name="menu" id="sexo">
+        <option >hombre</option>
+        <option >mujer</option>
+      </select>
+      <button id="btnCalcular1" type="button">Calcular</button>
+    </form>
+  
+    <ul>
+        <li>Zona de recuperación <b id="a"></b> </li>
+        <li>Zona aeróbica <b id="b"></b></li>
+        <li>Zona anaeróbica <b id="c"></b></li>
+        <li>Línea roja <b id="d"></b></li>
+    </ul>
+    <p id="respuesta"></p>
+    </div>
+
+    <div class="ejer3">
+        <div>
+
+            <h1>Tabla Clases</h1>
+            <div id="uno">
+                
+            </div>
+            <form class="oculto" id="clases" action="">
+                <input type="checkbox" name="Juan"id="pilates"><label>Pilates</label> 
+                 <input type="checkbox" name="Juan"id="spinning"><label>Spinning</label>
+                 <input type="checkbox" name="Juan"id="bodycombat"><label>Bodycombat</label>
+                 <input type="checkbox" name="Juan"id="zumba"><label>Zumba</label>
+                 <input type="checkbox" name="Juan"id="boxeo"><label>Boxeo</label>
+                <button id="btnClase" type="button">Seleccionar Clases</button>
+              </form>
+        
+              <button id="tablaClases" > Genera Clases</button >
+           
+           </div>
+    
+    <div>
+        <h1>Tabla Fisios</h1>
+        <div id="dos">
+    
+        </div>
+       
+    
+    
+        <form  class="oculto" id= "fisios"action="">
+          
+            <input type="radio" name="Juan"id="Juan"><label>Juan</label>
+            <input type="radio" name="Juan"id="Aitor"><label>Aitor</label>
+            <input type="radio" name="Juan"id="Paco"><label>Paco</label>
+            <input type="radio" name="Juan"id="Camilo"><label>Camilo</label>
+            <input type="radio" name="Juan"id="Miguel"><label>Miguel</label>
+            <button id="btnFisio" type="button">Seleccionar Fisio</button>
+        </form>
+    
+    </div>
+    <button id="tablaFisios" > Genera Fisios</button >
+    </div>
   
        
-<footer class="loginFooter">
-
-    
-    <ul class="lista" >
-        <li><img src="../img/youtube.png" alt=""><a href=""></a></li>
-        <li><img src="../img/insta.png" alt=""><a href=""></a></li>
-        <li><img src="../img/twitter.png" alt=""><a href=""></a></li>
-       
-    </ul>
-
-    <p>© 2022, POWER HOUSE GYM</p>
-</footer>
+    <footer>
+        <div class="container">
+        
+            <ul id="redes" >
+                <li id="you"><img  src="../img/youtube.png" alt=""><a href=""></a></li>
+                <li id="inst"><img id="ig" src="../img/insta.png" alt=""><a href=""></a></li>
+                <li id="twi"><img id="twi" src="../img/twitter.png" alt=""><a href=""></a></li>
+            </ul>
+        
+            <p><br>© 2022, POWER HOUSE GYM</p>
+        </div>
+        </footer>
+        
         
 
 

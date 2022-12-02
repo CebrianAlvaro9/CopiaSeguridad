@@ -1,8 +1,13 @@
 
 var sesiones=["pilates","spinning","bodycombat","zumba","boxeo"];
 var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
+
   function iniciar() {
-        
+    btnCalcular1 = document.getElementById("btnCalcular1");
+    btnCalcular1.addEventListener("click", clickBtnCalcular1);
+    btnCalcular = document.getElementById("btnCalcular");
+    btnCalcular.addEventListener("click", eliminar);
+    btnCalcular.addEventListener("click", clickBtnCalcular);  
     btnFisio = document.getElementById("btnFisio");
     btnClases = document.getElementById("btnClase");
     btnClases.addEventListener("click", eliminar);
@@ -11,10 +16,11 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
     let boton2=document.querySelector("#tablaFisios");
     boton2.addEventListener("click",()=>{
         var horas1 = ["","10:00 - 10:45","10:45 - 11:30","11:30 - 12:15","13:00 - 13:45","17:00 - 17:45","17:45 - 18:30","18:30 - 18:15","19:00 - 19:45","19:45 - 20:30","20:30 - 21:15"];
-        
         var div1="dos"
         var id="tabla2";
         genera_tablas(div1,id,sesiones1,horas1);
+        visibilidad("btnClase","clases");
+        
     });
     let boton1=document.querySelector("#tablaClases");
     boton1.addEventListener("click",()=>{
@@ -22,7 +28,17 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
         var div1="uno"
         var id="tabla1";
         genera_tablas(div1,id,sesiones,horas);
+        visibilidad("btnFisio","fisios");
     });
+}
+
+function visibilidad(boton,form){
+ var formu=getElementById(form);
+ var boton1=getElementById(boton);
+boton1.style.visibility = "hidden";
+formu.style.visibility = "visible";
+
+
 }
 
 function fisio(){
@@ -49,7 +65,7 @@ function fisio(){
 
         lista[i].style.color="blue";
         }else{
-            lista[i].style.color="black";  
+            lista[i].style.color="white";  
         }
 
       console.log(lista[i].textContent);
@@ -89,7 +105,7 @@ function eliminar(){
     lista = document.getElementsByTagName('td');
     for(i=0;i<lista.length;i++){
      
-      lista[i].style.color="black";
+      lista[i].style.color="white";
       
       console.log(lista[i].textContent);
 
@@ -141,6 +157,7 @@ function genera_tablas(div1,id,clase,horas ){
         div.appendChild(tabla);
       
         tabla.setAttribute("border", "2");
+        
     }
        
 

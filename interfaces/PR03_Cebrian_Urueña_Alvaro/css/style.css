@@ -413,6 +413,31 @@ footer{
     max-height: 0;
   }
 
+.ejer3{
+    width: 100%;
+}
+.ejer3 form {
+
+font-size: 1vh;
+display: inline-block;
+width: 75%;
+margin-left:  12%;
+}
+.ejer3 input {
+
+    width: 3%;
+       display: inline-block;
+    }
+.ejer3 label {
+
+        width: 7%;
+           display: inline-block;
+}
+
+.ejer3 button{
+    width: 30%;
+}
+
 
 }
 /*table*/
@@ -529,5 +554,14 @@ button{
 }
 .footerlogin{
     margin: 0;
+}
+
+body{
+    color:white;
+}
+
+table{
+    width: 100%;
+    margin-bottom: 5%;
 }
 
