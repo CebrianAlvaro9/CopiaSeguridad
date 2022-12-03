@@ -6,13 +6,15 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
     btnCalcular1 = document.getElementById("btnCalcular1");
     btnCalcular1.addEventListener("click", clickBtnCalcular1);
     btnCalcular = document.getElementById("btnCalcular");
-    btnCalcular.addEventListener("click", eliminar);
+    btnCalcular.addEventListener("click", eliminar1);
     btnCalcular.addEventListener("click", clickBtnCalcular);  
     btnFisio = document.getElementById("btnFisio");
     btnClases = document.getElementById("btnClase");
     btnClases.addEventListener("click", eliminar);
     btnFisio.addEventListener("click", fisio);
     btnClases.addEventListener("click", clase);
+    contra1= document.getElementById("btnContras");
+    contra1.addEventListener("click",segura);
 
     let boton2=document.querySelector("#tablaFisios");
     boton2.addEventListener("click",()=>{
@@ -21,7 +23,8 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
         var id="tabla2";
         var boton="tablaFisios";
         var formu="fisios";
-        genera_tablas(div1,id,sesiones1,horas1,boton,formu);
+        var h1="h1f"
+        genera_tablas(div1,id,sesiones1,horas1,boton,formu,h1);
      
         
     });
@@ -33,20 +36,14 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
         var id="tabla1";
         var boton="tablaClases";
         var formu="clases";
-        genera_tablas(div1,id,sesiones,horas,boton,formu);
+        var h1="h1c"
+        genera_tablas(div1,id,sesiones,horas,boton,formu,h1);
       
     });
 
 }
 
-function visibilidad(boton,form){
- var formu=getElementById(form);
- var boton1=getElementById(boton);
-boton1.css("display","none")
-formu.style.visibility = "hidden";
 
-
-}
 
 function fisio(){
 
@@ -119,7 +116,7 @@ function eliminar(){
     }
 }
 
-function genera_tablas(div1,id,clase,horas,boton,formu ){
+function genera_tablas(div1,id,clase,horas,boton,formu,h1 ){
     var diasDeLaSemena = ["", "Lunes","Martes","Miercoles","Jueves", "viernes","sabado"];
     if (document.querySelector("#"+id)==null){
 
@@ -129,7 +126,6 @@ function genera_tablas(div1,id,clase,horas,boton,formu ){
         tabla.setAttribute("id", id);
         
         var tblBody = document.createElement("tbody");
-        
         var hilera = document.createElement("tr");
          for (var j = 0; j < 6; j++) {   
            textoCelda = diasDeLaSemena[j];
@@ -164,12 +160,27 @@ function genera_tablas(div1,id,clase,horas,boton,formu ){
         div.appendChild(tabla);
       
         tabla.setAttribute("border", "2");
-        
-       document.getElementById(boton).style.visibility = "hidden";
-       document.getElementById(formu).style.visibility = "visible";
+       
+        tabla.style.padding="1%";
+       document.getElementById(boton).style.display = "none";
+       document.getElementById(boton).style.margin = "0";
+       document.getElementById(formu).style.display = "contents";
+       document.getElementById(h1).style.display = "contents";
+       
 
         
     }
-       
+}
+
+function segura(){
+  var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; 
+  contra= document.getElementById("contra").value;
+  if(myregex.test(contra)){
+    document.getElementById('respuesta1').innerHTML="Contraseña valida cumple los requisitos de seguridad";
+    document.getElementById('respuesta1').style.color="green";
+  }else{
+    document.getElementById('respuesta1').innerHTML=("Contraseña no valida no cumple los requisitos de seguridad");
+    document.getElementById('respuesta1').style.color="red";
+  }
 
 }

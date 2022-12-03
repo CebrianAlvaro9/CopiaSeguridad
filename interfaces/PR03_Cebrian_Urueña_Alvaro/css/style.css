@@ -6,26 +6,26 @@
 body{
     margin: 0;
     box-sizing: border-box;
-    background-color: rgba(15, 14, 14, 0.947);
+    background-color: rgba(0, 0, 0, 0.857);
     font-family: Arial, Helvetica, sans-serif;
   }
 
 h1{
     font-size: 10vw;
    text-align: center;
-   color: white;
+   color: rgb(254, 254, 254);
    
 }
 
 p{
     font-size: 4vw;
     
-    color: white;
+    color: rgb(254, 254, 254);
 }
 
 a{
     font-size: 5vw;
-    color: white;
+    color: rgb(254, 254, 254);
 }
 ul{
     list-style: none;
@@ -33,7 +33,7 @@ ul{
 }
 
 header{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     font-size: 5vw;
 }
 header li{
@@ -130,7 +130,7 @@ aside{
 
   width: 100%;
   
-  height: 60vh;
+  height: 70vh;
   background-image: linear-gradient(
       0deg,
       rgba(0,0,0,0.4),
@@ -198,7 +198,7 @@ form{
     border: 2px solid rgba(0,0,0,0.3);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     color: white;
-    background-color: rgb(30, 26, 34);
+    background-color: rgb(16, 16, 16);
 }
 
 #to {
@@ -232,6 +232,15 @@ form{
   #menu-toggle:checked + #menu {
     max-height: 100vh;
   }
+
+  #h1f, #h1c
+{
+
+display: none;
+}
+#tablaFisios,#tablaClases,#tc{
+    margin-bottom: 10%;
+}
 
 
 /*reponsive*/
@@ -413,10 +422,16 @@ footer{
     max-height: 0;
   }
 
-.ejer3,.ejer2,.ejer1{
+.ejer3{
     width: 100%;
     text-align: center;
     margin-top: 10%;
+    margin-bottom: 5%;
+}
+#sexo{
+    margin-top:3%;
+    font-size: 2.5vh;
+    color: black;
 }
 .ejer3 form {
 
@@ -425,12 +440,39 @@ display: inline-block;
 width: 75%;
 
 }
+.ejer1, .ejer2{
+    width: 100%;
+    margin-top: 5%;
+}
 
+.ejer1>h1,.ejer2>h1{
+    margin-bottom: 5%;
+}
+.imc{
+width: 50%;
+display: inline-block; 
+padding-left: 3%;
+}
+
+
+.imcResultado{
+float: right;
+width: 50%;
+}
+
+.imcResultado>p,.imcResultado>ul{
+    padding-top: 5%;
+    padding-left: 15%;
+    font-size: 2.5vh;
+
+}
 .ejer1 form{
     display: inline-block; 
+    width: 100%;
 }
 .ejer2 form{
     display: inline-block; 
+    width: 100%;
 }
 .ejer3 input {
 
@@ -575,5 +617,6 @@ table{
 }
 
 #clases,#fisios{
-    visibility: hidden;
+   display: none;
+  
 }

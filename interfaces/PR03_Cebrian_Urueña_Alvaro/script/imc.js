@@ -10,28 +10,34 @@
   
         var imc = peso / (altura * altura);
        
-        document.getElementById('imc').innerHTML= "El IMC es: "+imc;
-
-        if(imc==16){
-          $id ="a1";
        
-        }else if(imc>16&&imc<=16.99){
-          $id ="a2";
-        }else if(imc>16.99&&imc<=18.49){
-          $id ="a3";
-        }else if(imc>18.49&&imc<=24.99){
-          $id ="a4";
-        }else if(imc>24.99&&imc<=29.99){
-          $id ="a5";
-        }else if(imc>29.99&&imc<=34.99){
-          $id ="a6";
-        }   
-        else if(imc>34.99&&imc<=40){
-          $id ="a7";
-        }   
-        else if(imc>40){
-          $id ="a8";
+        if(imc<16||imc>70||imc==null){
+          document.getElementById('imc').innerHTML="Imposible calcular valores incorrectos";
+        }else{
+          document.getElementById('imc').innerHTML= "El IMC es: "+imc;
+          if(imc==16){
+            $id ="a1";
+         
+          }else if(imc>16&&imc<=16.99){
+            $id ="a2";
+          }else if(imc>16.99&&imc<=18.49){
+            $id ="a3";
+          }else if(imc>18.49&&imc<=24.99){
+            $id ="a4";
+          }else if(imc>24.99&&imc<=29.99){
+            $id ="a5";
+          }else if(imc>29.99&&imc<=34.99){
+            $id ="a6";
+          }   
+          else if(imc>34.99&&imc<=40){
+            $id ="a7";
+          }   
+          else if(imc>40){
+            $id ="a8";
+         
+          }
         }
+       
 
         document.getElementById($id).style.color="blue";
         

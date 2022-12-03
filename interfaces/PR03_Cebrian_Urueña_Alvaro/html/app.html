@@ -21,9 +21,9 @@
             <input type="checkbox" id="menu-toggle"/>
             <nav id="menu">
                 <ul  >
-                    <li><a href="app.html">APP</a></li> 
-                   <li><a href="html/login.html">LOGIN</a></li>
-                   <li><a href="">REGISTRATE!</a></li> 
+                    <li><a href="../index.html">INCIO</a></li> 
+                   <li><a href="login.html">LOGIN</a></li>
+                   
                 </ul>
             </nav>
             
@@ -33,44 +33,57 @@
     </header>
 
     <div  class="ejer1">
+        <h1>Calculadora IMC</h1>
+        <div class="imc">
+            
+            <form action="">
+              <label>Peso:</label> <input type="number" id="txtPeso">
+              <label>Altura:</label> <input type="number" id="txtAltura">
+              <button id="btnCalcular" type="button">Calcular</button>
+            </form>
+        </div>
            
-    <h1>Calculadora IMC</h1>
-    <form action="">
-      <label>Peso:</label> <input type="text" id="txtPeso">
-      <label>Altura:</label> <input type="text" id="txtAltura">
-      <button id="btnCalcular" type="button">Calcular</button>
-    </form>
-    <br>
-    <p id="imc"></p>
-
-    <ul id="b2">
-      <li class="b3"id="a1">16.00: Infrapeso (delgadez severa)</li> 
-      <li class="b3"id="a2">16.00 – 16.99: Infrapeso (delgadez moderada)</li>
-      <li class="b3"id="a3">17.00 - 18.49: Infrapeso (delgadez aceptable)</li>
-      <li class="b3"id="a4">18.50 - 24.99: Peso normal</li>
-      <li class="b3"id="a5">25.00 - 29.99: Sobrepeso</li>
-      <li class="b3" id="a6">30.00 - 34.99: Obeso (Tipo I)</li>
-      <li class="b3"id="a7">35.00 - 40.00: Obeso (Tipo II)</li>
-      <li class="b3"id="a8">>40.00: Obeso (Tipo III) </li>
-
-    </ul>
   
-    <br />
+        <div class="imcResultado">
+            
+            
+
+            
+            <p id="imc"></p>
+
+            <ul id="b2">
+            <li class="b3"id="a1">16.00: Infrapeso (delgadez severa)</li> 
+             <li class="b3"id="a2">16.00 – 16.99: Infrapeso (delgadez moderada)</li>
+             <li class="b3"id="a3">17.00 - 18.49: Infrapeso (delgadez aceptable)</li>
+            <li class="b3"id="a4">18.50 - 24.99: Peso normal</li>
+            <li class="b3"id="a5">25.00 - 29.99: Sobrepeso</li>
+            <li class="b3" id="a6">30.00 - 34.99: Obeso (Tipo I)</li>
+            <li class="b3"id="a7">35.00 - 40.00: Obeso (Tipo II)</li>
+            <li class="b3"id="a8">>40.00: Obeso (Tipo III) </li>
+
+            </ul>
+  
+         </div>
+  
+   
 
     </div>
 
     <div class="ejer2">
 
     <h1>Calculadora FCM</h1>
+    <div class="imc">
     <form action="">
       <label>EDAD</label> <input type="number" minlength="1" id="txtEdad">
-      <select name="menu" id="sexo">
+      <select id="sexo" name="menu" id="sexo">
         <option >hombre</option>
         <option >mujer</option>
       </select>
       <button id="btnCalcular1" type="button">Calcular</button>
     </form>
     <br>
+</div>
+    <div class="imcResultado">
   
     <ul>
         <li>Zona de recuperación <b id="a"></b> </li>
@@ -80,13 +93,45 @@
     </ul>
     <p id="respuesta"></p>
     </div>
+    </div>
+    <div class="ejer1">
+
+      
+        <h1>Crea una contraseña segura</h1>
+
+        <div class="imc">  
+            <form action="">
+            <label>Contraseña</label> <input type="password" id="contra">
+            <button id="btnContras" type="button">enviar</button>
+          </form>
+        </div>
+          <div class="imcResultado">
+         
+            <ul>
+                <li>REQUISITOS</li>
+                <br>
+                <li>tiene entre 8 y 16 caracteres.</li>
+                <li>tiene una letra mayúscula.</li>
+                <li>Que tiene una letra minúscula.</li>
+                <li>Que tiene un número.</li>
+                <li>Que tiene un simbolo.</li>
+            </ul>
+         
+            <p id="respuesta1"></p>
+            </div>
+            
+    </div>
+    
 
     <div class="ejer3">
-        <div>
+        <h1>HORARIOS</h1>
+        <button id="tablaClases" > Mostrar horario clases</button >
+        <button id="tablaFisios" >Mostrar horario fisios</button >
+    <div id="tc">
 
-            <h1>Tabla Clases</h1>
+            <h1 id="h1c">Tabla Clases</h1>
 
-            <button id="tablaClases" > Genera Clases</button >
+            
             <div id="uno">
                 
             </div>
@@ -101,11 +146,12 @@
         
               
            
-           </div>
+    </div>
+    
     
     <div>
-        <h1>Tabla Fisios</h1>
-        <button id="tablaFisios" > Genera Fisios</button >
+        <h1 id="h1f">Tabla Fisios</h1>
+      
         <div id="dos">
     
         </div>
@@ -123,9 +169,11 @@
         </form>
     
     </div>
+ 
 
     </div>
-  
+
+
        
     <footer>
         <div class="container">

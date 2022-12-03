@@ -7,13 +7,12 @@
     <script languaje="Javascript" src=prueba6.js></script>
     <title>Document</title>
 </head>
-<body>
-    <form method="POST" action="/.../" onsubmit="checkForm(this); return false;">
-        <p>Usuario: <input type="text" name="username"></p>
-        <p>Contraseña: <input type="password" name="pwd1"></p>
-        <p>Confirmar Contraseña: <input type="password" name="pwd2"></p>
-        <p><input type="submit" value="verificar"></p>
-        </form>
-    
+<body onload="iniciar()">
+
+    <form action="">
+        <label>Contraseña</label> <input type="password" id="contra">
+        <button id="btnContras" type="button">enviar</button>
+      </form>
+
 </body>
 </html>
