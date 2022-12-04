@@ -1,3 +1,6 @@
+
+/*Esta pagina web fue primero diseñada en version movil para luego a la hora de ir ampliendo el tamaño de pantalla
+tener que hacer menos ajustes. Utilizando el display flex y aliniendo los objtos para movil en formatio columna*/
 *{
    
     box-sizing: border-box;
@@ -10,6 +13,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  /* Diferentes de tipos de contendores de texto con sus respectivos tamaños de fuente y colores **/
 h1{
     font-size: 10vw;
    text-align: center;
@@ -31,7 +35,7 @@ ul{
     list-style: none;
     margin: 0;
 }
-
+/* Header */
 header{
     background-color: rgb(0, 0, 0);
     font-size: 5vw;
@@ -39,27 +43,6 @@ header{
 header li{
     margin-bottom: 2%;
 }
-.joan{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    width: 100%;
-  
-    height: 60vh;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.4),
-        rgba(0,0,0,0.4)
-    )
-    ,url("../img/cbum2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
-
 #logo{
     margin: 0;
     padding-left: 11%;
@@ -72,10 +55,7 @@ header.container{
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
-
-
 
 header nav{
     display: flex;
@@ -83,10 +63,8 @@ header nav{
     text-align: center;
     padding-bottom: 5%;
 }
-
 header a{
   
-    
     text-decoration: none;
     font-weight: bold;
     color:white;
@@ -95,6 +73,52 @@ header a{
 header a:hover{
     color: grey;
 }
+ 
+/*Parte del menu desplegable que al cliclarlo desplayea un menu oculto */
+#menu-toggle {
+    display: none;
+    margin: 0;
+  }
+  #menu {
+    background-color: #0d0d0c;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0 auto;
+
+  }
+  /*Parte que lo acciona al ser checkeado y le añade un height para que aparezca la lista de mavegacion
+  Esta puesto con click ya que al ser movil no se puede poner el raton encima sin cliclar*/
+  #menu-toggle:checked + #menu {
+    max-height: 100vh;
+  }
+/*Div de presentacion con boton para apuntarse
+*/
+.joan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;/*Para que los div salgan en formato columna que para movil es mas adecuado
+    en la version de escritorio se usara el formato row que displayea los objetos en fila*/
+    width: 100%;
+    height: 60vh;
+    /*Utilizo el background image para poner los ojetos encimas ya sean texto botones etc
+    y poder usar el gradiente que atenua la foto para que no se vea tan nitida y quite protagonismo*/
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    )
+    ,url("../img/cbum2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /*Repeat para que no repita el background para ajustarlo al tamaño si no al reves ajusta el tamaño del
+    background en funcion de la pantalla sin repetir lo zommea*/
+}
+
+/*Galeria imagenes*/
 
 .galeria{
     display: flex;
@@ -130,7 +154,7 @@ aside{
 
   width: 100%;
   
-  height: 70vh;
+  height: 72vh;
   background-image: linear-gradient(
       0deg,
       rgba(0,0,0,0.4),
@@ -142,6 +166,8 @@ aside{
   background-position: center center;
 
 }
+
+/*footer*/
 footer{
     width: 100%;
     background-color: black;
@@ -177,12 +203,13 @@ footer p{
     text-align: center;
 }
 
+/*Formulario login */
 form{
     margin-left: 0%;
     width: 100%;
     background-color: rgba(255,255,255,0.13);
     border-radius: 10px;
-    backdrop-filter: blur(70px);
+    backdrop-filter: blur(70px);/*funcion para que trasparente el color y asi se adapta el fondo*/
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
@@ -216,23 +243,8 @@ form{
    
   }
  
- 
-  #menu-toggle {
-    display: none;
-    margin: 0;
-  }
-  #menu {
-    background-color: #0d0d0c;
-    overflow: hidden;
-    max-height: 0;
-    padding: 0;
-    margin: 0 auto;
 
-  }
-  #menu-toggle:checked + #menu {
-    max-height: 100vh;
-  }
-
+/*Parte para cliente esta hecha responsive igualmente */
   #h1f, #h1c
 {
 
@@ -240,11 +252,40 @@ display: none;
 }
 #tablaFisios,#tablaClases,#tc{
     margin-bottom: 10%;
+    margin-top: 10%;
 }
 
+/* Parte del mapa 
+Se le aplica mas cambios en la parte de escritorio */
+ .mapa{
+    height: 100vh;
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 15%;
+    margin-bottom: 3%;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.4)
+  )
+  ,url("../img/bi.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+ }
 
+.iframe{
+    width: 100%;
+    height: 30vh;
+}
+.mapa>.derecha>.b{
+   margin-left: 15%;
+}
 /*reponsive*/
 
+/*Parte responsiva apartir de 801px lo que seria una version de escritorio en este caso
+el principal cambio es el cambio son las alturas el cambio que se produce en la barra de navegacion al
+pasar a estar en modo fila sin tener el modo checked y el mapa*/
 @media (min-width: 801px) {
    
     .joan{
@@ -303,6 +344,7 @@ display: none;
     a{
         font-size: 2vw;
     }
+    /*Cambio en el header para ponerlo en modo fila en el escritorio*/
 header .container{
     flex-direction: row;
     justify-content: space-between;
@@ -404,7 +446,7 @@ footer{
    margin:0;
   }
  
- 
+ /*Parte que desactiva el checked que desplayeaba el menu de navegacion en la version de movil*/
   #menu-toggle {
     display: none;
     margin: 0;
@@ -421,7 +463,7 @@ footer{
   #menu-toggle:checked + #menu {
     max-height: 0;
   }
-
+/*CSS de la parte de la practica de entorno cliente*/
 .ejer3{
     width: 100%;
     text-align: center;
@@ -488,10 +530,55 @@ width: 50%;
 .ejer3 button{
     width: 30%;
 }
-
+/*Parte del mapa el principal cambio es que la parte de la direccion pasa a estar a ala derecha
+del mapa lo que seria en formato fila*/
+.mapa{
+    margin-top: 2%;
+    height: 90vh;
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 15%;
+    margin-bottom: 8%;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.4)
+  )
+  ,url("../img/pierna.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+ }
+.derecha{
+    width: 40%;
+    float: right;
+ 
+   
+}
+.mapa>.texto>h1{
+    margin-bottom: 5%;
+}
+.mapa>.derecha>.b{
+    width: 50vh;
+    height: 10vh;
+    margin: 0%;
+}
+.derecha>p{
+    font-size: 3vh;
+}
+.iframe{
+    margin-top: 1%;
+    margin-left: 10%;
+    width: 40%;
+    height: 50vh;
+    display: inline-block;
+}
 
 }
-/*table*/
+/*tablet*/
+/*La parte de tablet es muy parecida a la de escritorio pero tambien a la de movil es decir en hibrido
+entre las dos Mantiene el menu de navegacion de la version de movil pero a su vez, mantiene
+el formato del mapa que tiene la version de escritorio*/
 
 @media only screen and (min-width: 420px) and (max-width: 800px) {
    
@@ -548,6 +635,49 @@ width: 50%;
       #to {
         font-size: 3vh;
       }
+      .mapa{
+        margin-top: 2%;
+        height: 90vh;
+        width: 100%;
+        padding-top: 3%;
+        padding-bottom: 15%;
+        margin-bottom: 8%;
+        background-image: linear-gradient(
+          0deg,
+          rgba(0,0,0,0.4),
+          rgba(0,0,0,0.4)
+      )
+      ,url("../img/pierna.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+     }
+    .derecha{
+        width: 40%;
+        float: right;
+     
+       
+    }
+    .mapa>.texto>h1{
+        margin-bottom: 5%;
+        font-size: 4.5vh;
+    }
+    .mapa>.derecha>.b{
+        width: 100%;
+        height: 10vh;
+        margin: 0%;
+    }
+    .derecha>p{
+        font-size: 3vh;
+       
+    }
+    .iframe{
+        margin-top: 1%;
+        margin-left: 5%;
+        width: 45%;
+        height: 50vh;
+        display: inline-block;
+    }
     
      
 }

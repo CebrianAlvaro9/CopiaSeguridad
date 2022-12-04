@@ -1,0 +1,75 @@
+/*Version del css para impresion */
+/*La version de impresion la he dejado muy simple, solo he incluido las fotos del club
+y el contacto que creo que son los elementos mas importantes que un usuario podria necesitar*/
+
+@media print {
+    /* Imprimos el cuerpo en blanco */
+	body {
+        background: #fff !important;
+    }
+
+    /*La parte de la incripcion tambien*/
+
+	#container {
+        box-shadow: none;
+        background: #fff !important;
+		margin-bottom:20px;
+        border: 1px solid #000;
+		padding-left:5px;
+    }
+
+   
+	header h1 {
+        background: #fff;
+    }
+    
+    /* Definimos lo que no queremos imprimir en el documento */
+	nav {
+        display: none;
+    }
+    /*quito el aside ya que no es tan importante y el footer*/
+    aside {
+        display: none;
+    }
+    footer {
+        display: none;
+            
+        }
+
+    /**/
+	section{
+        width: 100%;
+        float: none;
+        padding-left: 0;
+		padding-bottom:10px;
+        background: #fff;
+		margin-bottom:20px;
+		border-bottom: 1px solid #000;
+        -webkit-print-color-adjust: exact; 
+        
+        color-adjust: exact;
+		page-break-inside: avoid; /* sirve para no cortar un artículo con un salto de página */
+    }
+
+    /*hago que las fotos se impriman en una unica hoja*/
+    .fotos-gym1 img{
+        width: 40%;
+
+    }
+    /*Eliminamos la parte del mapa y dejamos solo la direccion y el contacto*/
+    .iframe{
+    display: none;
+    }
+    .mapa>.derecha>.b{
+      display: none;
+     }
+    /* Definimos dónde y cómo se van a visualizar los enlaces 
+	   En este caso se abre en una página nueva*/
+	article a[target=_blank]:after {
+        content: " (" attr(href) ")";
+    }
+
+
+	
+
+}
