@@ -15,7 +15,7 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
     btnClases.addEventListener("click", clase);
     contra1= document.getElementById("btnContras");
     contra1.addEventListener("click",segura);
-
+   /**funciones para crear las tablas con los array y las variables */
     let boton2=document.querySelector("#tablaFisios");
     boton2.addEventListener("click",()=>{
         var horas1 = ["","10:00 - 10:45","10:45 - 11:30","11:30 - 12:15","13:00 - 13:45","17:00 - 17:45","17:45 - 18:30","18:30 - 18:15","19:00 - 19:45","19:45 - 20:30","20:30 - 21:15"];
@@ -44,7 +44,10 @@ var sesiones1=["Juan","Paco","Camilo","Miguel","Aitor"];
 }
 
 
-
+/**Para saber los fisios que estan seleccionados recorro la lista que los contiene 
+ * y si esta checkeado el id devuelve true en el elemento seleccionado y lo guarda en una variable nueva creada
+ * llamada fisio
+ */
 function fisio(){
 
 
@@ -76,7 +79,9 @@ function fisio(){
 
     }
 }
-
+/**Crea una lista con los elementos que estan seleccionado con el checked
+ * extrae los elementos de la tabla y los subraya
+ */
 function clase(){
   
 

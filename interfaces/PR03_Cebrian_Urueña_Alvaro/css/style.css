@@ -258,7 +258,7 @@ display: none;
 /* Parte del mapa 
 Se le aplica mas cambios en la parte de escritorio */
  .mapa{
-    height: 100vh;
+    height: 50%;
     width: 100%;
     padding-top: 3%;
     padding-bottom: 15%;
@@ -534,7 +534,7 @@ width: 50%;
 del mapa lo que seria en formato fila*/
 .mapa{
     margin-top: 2%;
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     padding-top: 3%;
     padding-bottom: 15%;
@@ -559,7 +559,7 @@ del mapa lo que seria en formato fila*/
     margin-bottom: 5%;
 }
 .mapa>.derecha>.b{
-    width: 50vh;
+    width: 50%;
     height: 10vh;
     margin: 0%;
 }
@@ -637,7 +637,7 @@ el formato del mapa que tiene la version de escritorio*/
       }
       .mapa{
         margin-top: 2%;
-        height: 90vh;
+        height: 74vh;
         width: 100%;
         padding-top: 3%;
         padding-bottom: 15%;
@@ -660,15 +660,18 @@ el formato del mapa que tiene la version de escritorio*/
     }
     .mapa>.texto>h1{
         margin-bottom: 5%;
-        font-size: 4.5vh;
+        font-size: 3vh;
+        width: 40%;
+       align-items: center;
+
     }
     .mapa>.derecha>.b{
-        width: 100%;
+        width: 60%;
         height: 10vh;
-        margin: 0%;
+        margin: 0;
     }
     .derecha>p{
-        font-size: 3vh;
+        font-size: 2vh;
        
     }
     .iframe{
