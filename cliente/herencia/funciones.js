@@ -30,9 +30,16 @@ function crearColegio(){
   }
 
   function mostrarcolegios(){
-    
-    colegio1.forEach(element => console.log(element));
+    var p1="";
+  
 
+    colegio1.forEach(element => console.log(element));
+    
+    for(var i=0;i<colegio1.length;i++){
+      p1= p1+"nombre:"+colegio1[i].nombre+" numero aulas:"+colegio1[i].nAulas+" numero alumnos"+colegio1[i].nAlumnos+"<br>";
+
+    }
    
+      document.getElementById("p").innerHTML=p1;
 
   }
