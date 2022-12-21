@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+ <meta charset="UTF-8">
+ <title>Ejemplo2</title>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+ <style type="text/css">
+    .clasecss{
+        background-color: #ff8800;
+        font-weight: bold;
+    }
+ </style>
+ <script>
+
+ $(document).ready(function(){
+ $("a").mouseover(function(event){
+    $("#capa").addClass("clasecss");
+ }); 
+ $("a").mouseout(function(event){
+    $("#capa").removeClass("clasecss");
+ }); 
+ }); 
+ </script>
+ </head>
+ <body>
+    <div id="capa">
+        Esta capa es independiente y voy añadir clases css sobre ella
+    </div>
+    <br>
+    <br>
+ <a href="http://www.desarrolloweb.com/">Añadir y quitar clase en la capa de arriba</a>
+ </body>
+</html> 

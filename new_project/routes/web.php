@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\AppEjemplo;
+use App\Http\Controllers\AsignaturaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudyController;
 use App\Http\Controllers\PruebaController;
@@ -16,8 +17,13 @@ use App\Http\Controllers\PruebaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/**
+ * Asignaturas
+ */
 
+ Route::resource('asignaturas',AsignaturaController::class);
 
+ /**ejemplos  varios */
 Route::get('/informacion-asignatura',[AppEjemplo::class,'mostrarinformacion'] )->name('infoasig');
 
 Route::get('/', function () {

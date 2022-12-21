@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+ <meta charset="UTF-8">
+ <title>Ejemplo5</title>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+
+ <script>
+
+ $(document).ready(function(){
+    $('#text').text("HOLA MUNDO");
+    $("#html").html("<i>Texto en italica</i>");
+    //para agregar contenido al final de la clase
+    $(".append").append("Contenido al final");
+    //para agregar contenido al principio de la clase
+    
+    $(".prepend").prepend("Contenido al principio....");
+    $("input[type='text'").val("Agregando contenido");
+ }); 
+ </script>
+ </head>
+ <body>
+    <div id="text"></div>
+    <div id="html"></div>
+    <div class="append">tengo contenido...</div>
+    <div class="prepend">tengo contenido...</div>
+   <div class="append prepend">tengo contenido...</div>
+   <input type="text">
+</body>
+</html> 

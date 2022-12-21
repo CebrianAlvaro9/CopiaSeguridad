@@ -4,7 +4,7 @@ function inicio(){
   botonM= document.getElementById("mod");
   botonM.addEventListener("click",modificarColegio);
   botonMos= document.getElementById("mos");
-  botonMos.addEventListener("click",mostrarcolegios);
+
 
 }
 var colegio1=[];
@@ -16,6 +16,7 @@ function crearColegio(){
     var nAlumnos= document.getElementById("nAlumnos").value ;
     col =new Colegio(nombreColegio,nAulas,nAlumnos);
     colegio1.push(col);
+    mostrarcolegios();
    
  
   }
@@ -23,23 +24,35 @@ function crearColegio(){
 
   function modificarColegio(){
 
-    var nombreColegio= document.getElementById("nombreC").value;
-    mod = colegio1.find(col => col.nombre === nombreColegio);
-    mod.modificarAlumnos();
+    var nombreColegio= document.getElementById("nombreM").value;
+    mod = colegio1.find(({ nombre }) => nombre === nombreColegio);
+    if(mod){
+      
+      mod.modificarAlumnos();
+      console.log(mod);
+      mostrarcolegios();
+    }else{
+      alert("Nombre de colegio no valido");
+    }
+
  
   }
 
   function mostrarcolegios(){
+
     var p1="";
   
 
-    colegio1.forEach(element => console.log(element));
     
+    
+    p0="<tr><td> NOMBRE </td><td> N AULAS </td><td> N ALUMNOS </td></tr>";
     for(var i=0;i<colegio1.length;i++){
-      p1= p1+"nombre:"+colegio1[i].nombre+" numero aulas:"+colegio1[i].nAulas+" numero alumnos"+colegio1[i].nAlumnos+"<br>";
+      p1= p1+"<tr><td>  "+colegio1[i].nombre+"</td><td>"+colegio1[i].nAulas+"</td><td>"+colegio1[i].nAlumnos+"</td></tr>";
 
     }
-   
-      document.getElementById("p").innerHTML=p1;
+  var tabla = document.getElementById("table")
+  tabla.innerHTML=p0+p1;
+  tabla.setAttribute("border", "2");
+
 
   }

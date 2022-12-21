@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+ <meta charset="UTF-8">
+ <title>Ejemplo5</title>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+ <style type="text/css">
+   .rojo{ color:red;}
+   .grande26{font-size: 26px;}
+ </style>
+ <script>
+
+ $(document).ready(function(){
+ $("#boton01").click(function(event){
+    $("#parrafo").addClass("rojo");
+ }); 
+ $("#boton02").click(function(event){
+    $("#parrafo").addClass("rojo grande26");
+ });
+ $("#boton03").click(function(event){
+    $("#parrafo").removeClass("rojo");
+ });
+ $("#boton04").click(function(event){
+    $("#parrafo").removeClass("rojo grande26");
+ });
+
+ }); 
+ </script>
+ </head>
+ <body>
+<p id="parrafo"> aaaa
+<element></element>Eliminaciones de estilos en este parrafo
+</p>
+<input type="button" name="boton01" id="boton01" value="Asignar color rojo">
+<input type="button" name="boton02" id="boton02" value="Asignar texto rojo y tamaño">
+<input type="button" name="boton03" id="boton03" value="Eliminar estilo rojo">
+<input type="button" name="boton04" id="boton04" value="Eliminar texto y tamaño">
+</body>
+</html> 
