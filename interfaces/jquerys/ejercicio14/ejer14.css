@@ -1,0 +1,21 @@
+#panel-oculto{ 
+    display: none; position: fixed;
+    top:30px; right: 400px;width: 100px;
+    height: 200px; z-index:1000;background-color: #222;
+}
+
+div{
+   
+   margin:auto;
+    width: 50%;
+
+}
+h1{
+    color:green;
+}
+
+body{
+    
+    background-color: black;
+    color: white;
+}

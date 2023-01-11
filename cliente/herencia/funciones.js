@@ -42,9 +42,6 @@ function crearColegio(){
 
     var p1="";
   
-
-    
-    
     p0="<tr><td> NOMBRE </td><td> N AULAS </td><td> N ALUMNOS </td></tr>";
     for(var i=0;i<colegio1.length;i++){
       p1= p1+"<tr><td>  "+colegio1[i].nombre+"</td><td>"+colegio1[i].nAulas+"</td><td>"+colegio1[i].nAlumnos+"</td></tr>";

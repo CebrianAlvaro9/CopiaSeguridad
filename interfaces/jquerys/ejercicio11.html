@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script> 
+    <script>
+
+      
+
+   
+        $(document).ready(function(){
+        $(".ver").click(function(){
+            $(this).parent().next().toggle();
+        })
+
+        $("#vertodo").click(function(){
+            $('.respuesta').toggle('slow');
+        });
+        });
+    
+    </script>
+    <style media="screen">
+        body{background: #66666666;}
+     
+        .respuesta{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p> Pregunta1..( <a class="ver" href="#">ver respuesta</a>)</p>
+    <p class="respuesta">respuesta 1</p>
+    <p> Pregunta2..( <a class="ver" href="#">ver respuesta</a>)</p>
+    <p class="respuesta">respuesta 2</p>
+    <p> Pregunta3..( <a class="ver" href="#">ver respuesta</a>)</p>
+    <p class="respuesta">respuesta 3</p>
+
+    <br>
+   <a href="#" id="vertodo">Alternar todo</a>
+</body>
+</html>
